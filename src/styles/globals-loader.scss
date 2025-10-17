@@ -1,0 +1,5 @@
+// This file is imported at build time for SSR
+@import "./globals";
+@import "./admin-layout";
+@import "./admin-common";
+@import "./error-404-realistic";

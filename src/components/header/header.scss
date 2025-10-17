@@ -1,0 +1,120 @@
+.header {
+    width: 100%;
+    background-color: $background-color;
+    border-bottom: 1px solid $border-color;
+    padding: 0 $spacing-large;
+    box-sizing: border-box; // padding이 너비에 포함되도록 설정
+
+    .header-container {
+        max-width: 1200px;
+        height: 80px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            a {
+                font-size: 24px;
+                font-weight: 700;
+                color: $font-color-primary;
+                text-decoration: none;
+            }
+        }
+
+        .nav {
+            ul {
+                display: flex;
+                gap: $spacing-large * 2;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+                color: $font-color-primary;
+                text-decoration: none;
+                padding: $spacing-small 0;
+                transition: color 0.2s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &.active {
+                    color: $primary-color;
+                    border-bottom: 2px solid $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.utils {
+    display: flex;
+    align-items: center;
+    gap: $spacing-large;
+
+    .search-form {
+        position: relative;
+
+        input {
+            border: 1px solid $border-color;
+            border-radius: 20px;
+            padding: 8px 40px 8px 16px; // 오른쪽 패딩으로 아이콘 공간 확보
+            width: 240px;
+            transition: border-color 0.2s;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+            }
+        }
+
+        button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: $font-color-secondary;
+        }
+    }
+
+    .icon-links {
+        display: flex;
+        align-items: center;
+        gap: $spacing-medium;
+        font-size: 24px;
+
+        a {
+            color: $font-color-primary;
+            text-decoration: none;
+            position: relative; // 뱃지 위치 기준
+        }
+
+        .cart-link {
+            .cart-badge {
+                position: absolute;
+                top: -4px;
+                right: -8px;
+                background-color: $primary-color;
+                color: white;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                font-size: 11px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+            }
+        }
+    }
+}

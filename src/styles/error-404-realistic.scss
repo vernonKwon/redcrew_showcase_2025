@@ -1,0 +1,1173 @@
+@import './variables';
+@import './mixins';
+
+.error-404 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 50%, #e17055 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.error-404-container {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+  max-width: 700px;
+  animation: fadeInUp 0.8s ease;
+}
+
+// 사실적인 고양이 스타일
+.cat-container {
+  margin-bottom: 2rem;
+  animation: cat-appear 0.8s ease-out;
+  
+  .cat {
+    position: relative;
+    width: 240px;
+    height: 220px;
+    margin: 0 auto;
+    
+    .cat-head {
+      position: relative;
+      width: 120px;
+      height: 105px;
+      background: linear-gradient(145deg, 
+        #e8c4a0 0%, 
+        #d4a574 25%, 
+        #c19660 60%, 
+        #b08652 100%);
+      border-radius: 58% 58% 52% 52%;
+      margin: 0 auto;
+      box-shadow: 
+        inset -10px -10px 20px rgba(0, 0, 0, 0.15),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.25),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: head-bob 4s ease-in-out infinite;
+      
+      // 털 무늬 패턴 (태비 고양이)
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: 
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 8px,
+            rgba(101, 67, 33, 0.12) 8px,
+            rgba(101, 67, 33, 0.12) 12px
+          ),
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 15px,
+            rgba(101, 67, 33, 0.08) 15px,
+            rgba(101, 67, 33, 0.08) 18px
+          );
+        opacity: 0.8;
+      }
+      
+      // 이마 M자 무늬
+      &::after {
+        content: 'M';
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(1.5);
+        font-size: 25px;
+        color: rgba(101, 67, 33, 0.2);
+        font-weight: bold;
+        font-family: serif;
+      }
+      
+      .cat-ears {
+        .ear {
+          position: absolute;
+          width: 40px;
+          height: 45px;
+          top: -22px;
+          background: linear-gradient(145deg, 
+            #d4a574 0%, 
+            #c19660 50%, 
+            #b08652 100%);
+          box-shadow: 
+            inset 3px 3px 8px rgba(255, 255, 255, 0.25),
+            inset -3px -3px 8px rgba(0, 0, 0, 0.25),
+            0 3px 8px rgba(0, 0, 0, 0.3);
+          
+          &.ear-left {
+            left: 12px;
+            border-radius: 25% 75% 90% 10% / 100% 50% 50% 0%;
+            transform: rotate(-22deg);
+            animation: ear-twitch-left 6s infinite;
+            
+            // 귀 내부 (분홍색)
+            &::after {
+              content: '';
+              position: absolute;
+              width: 22px;
+              height: 28px;
+              background: linear-gradient(145deg, 
+                #ffcfd5 0%, 
+                #ffb3ba 50%, 
+                #ff9fa5 100%);
+              border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+              top: 14px;
+              left: 10px;
+              box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            
+            // 귀털
+            &::before {
+              content: '';
+              position: absolute;
+              width: 8px;
+              height: 12px;
+              background: rgba(255, 255, 255, 0.4);
+              border-radius: 50%;
+              top: 8px;
+              left: 5px;
+              filter: blur(2px);
+            }
+          }
+          
+          &.ear-right {
+            right: 12px;
+            border-radius: 75% 25% 10% 90% / 100% 50% 50% 0%;
+            transform: rotate(22deg);
+            animation: ear-twitch-right 6s infinite;
+            animation-delay: 0.5s;
+            
+            &::after {
+              content: '';
+              position: absolute;
+              width: 22px;
+              height: 28px;
+              background: linear-gradient(145deg, 
+                #ffcfd5 0%, 
+                #ffb3ba 50%, 
+                #ff9fa5 100%);
+              border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+              top: 14px;
+              right: 10px;
+              box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            
+            &::before {
+              content: '';
+              position: absolute;
+              width: 8px;
+              height: 12px;
+              background: rgba(255, 255, 255, 0.4);
+              border-radius: 50%;
+              top: 8px;
+              right: 5px;
+              filter: blur(2px);
+            }
+          }
+        }
+      }
+      
+      .cat-face {
+        position: relative;
+        padding-top: 28px;
+        
+        .cat-eyes {
+          display: flex;
+          justify-content: center;
+          gap: 32px;
+          
+          .eye {
+            width: 28px;
+            height: 35px;
+            background: linear-gradient(145deg, 
+              #90cfc0 0%, 
+              #5fb3a6 30%, 
+              #3e8e7e 60%,
+              #2c6e60 100%);
+            border-radius: 58% 42% 52% 48%;
+            position: relative;
+            overflow: hidden;
+            animation: blink-cat 6s infinite;
+            box-shadow: 
+              inset 0 3px 6px rgba(0, 0, 0, 0.4),
+              0 2px 4px rgba(0, 0, 0, 0.3);
+            
+            &.left-eye {
+              transform: rotate(-8deg);
+            }
+            
+            &.right-eye {
+              transform: rotate(8deg);
+            }
+            
+            // 동공
+            .pupil {
+              width: 20px;
+              height: 24px;
+              background: radial-gradient(ellipse at center, 
+                #1a1a1a 0%, 
+                #0a0a0a 70%, 
+                #000000 100%);
+              border-radius: 45% 55% 50% 50%;
+              position: absolute;
+              top: 6px;
+              left: 50%;
+              transform: translateX(-50%);
+              animation: pupil-dilate 8s infinite;
+              
+              // 빛 반사 (큰 것)
+              &::before {
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 9px;
+                background: radial-gradient(ellipse at center, 
+                  #ffffff 0%, 
+                  rgba(255, 255, 255, 0.8) 70%, 
+                  transparent 100%);
+                border-radius: 50%;
+                top: 3px;
+                right: 5px;
+              }
+              
+              // 빛 반사 (작은 것)
+              &::after {
+                content: '';
+                position: absolute;
+                width: 3px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 50%;
+                bottom: 6px;
+                left: 6px;
+              }
+            }
+          }
+        }
+        
+        .cat-nose {
+          width: 14px;
+          height: 10px;
+          background: linear-gradient(145deg, 
+            #d4756f 0%, 
+            #c05850 50%, 
+            #8b4540 100%);
+          border-radius: 55% 55% 65% 65%;
+          margin: 10px auto 4px;
+          position: relative;
+          box-shadow: 
+            inset 0 -2px 3px rgba(0, 0, 0, 0.4),
+            0 1px 2px rgba(0, 0, 0, 0.2);
+          
+          // 콧구멍
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            bottom: 3px;
+          }
+          
+          &::before {
+            left: 3px;
+          }
+          
+          &::after {
+            right: 3px;
+          }
+        }
+        
+        // 코 아래 선
+        .nose-line {
+          width: 1px;
+          height: 10px;
+          background: linear-gradient(to bottom, 
+            rgba(139, 90, 67, 0.4) 0%, 
+            transparent 100%);
+          margin: 0 auto;
+        }
+        
+        .cat-mouth {
+          display: flex;
+          justify-content: center;
+          gap: 0;
+          margin-top: 2px;
+          
+          .mouth-left,
+          .mouth-right {
+            width: 20px;
+            height: 14px;
+            border: 1.8px solid rgba(139, 90, 67, 0.5);
+            border-top: none;
+            
+            &.mouth-left {
+              border-radius: 0 0 0 25px;
+              border-right: none;
+              transform: translateX(1px);
+            }
+            
+            &.mouth-right {
+              border-radius: 0 0 25px 0;
+              border-left: none;
+              transform: translateX(-1px);
+            }
+          }
+        }
+        
+        .cat-whiskers {
+          .whisker {
+            position: absolute;
+            height: 1.5px;
+            background: linear-gradient(90deg, 
+              transparent 0%, 
+              rgba(255, 255, 255, 0.6) 10%,
+              rgba(100, 60, 40, 0.7) 30%, 
+              rgba(100, 60, 40, 0.7) 70%, 
+              rgba(255, 255, 255, 0.4) 90%,
+              transparent 100%);
+            
+            &.whisker-left-1 {
+              width: 55px;
+              top: 40px;
+              left: -45px;
+              transform: rotate(3deg);
+            }
+            
+            &.whisker-left-2 {
+              width: 50px;
+              top: 47px;
+              left: -40px;
+              transform: rotate(-3deg);
+            }
+            
+            &.whisker-right-1 {
+              width: 55px;
+              top: 40px;
+              right: -45px;
+              transform: rotate(-3deg);
+            }
+            
+            &.whisker-right-2 {
+              width: 50px;
+              top: 47px;
+              right: -40px;
+              transform: rotate(3deg);
+            }
+          }
+        }
+      }
+    }
+    
+    .cat-body {
+      width: 110px;
+      height: 90px;
+      background: linear-gradient(180deg, 
+        #d4a574 0%, 
+        #c19660 35%, 
+        #b08652 70%, 
+        #9d7548 100%);
+      border-radius: 48% 48% 52% 52%;
+      margin: -25px auto 0;
+      position: relative;
+      box-shadow: 
+        inset -10px -10px 20px rgba(0, 0, 0, 0.15),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.2),
+        0 10px 25px rgba(0, 0, 0, 0.25);
+      
+      // 몸통 털 무늬
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: 
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 10px,
+            rgba(101, 67, 33, 0.1) 10px,
+            rgba(101, 67, 33, 0.1) 13px
+          ),
+          radial-gradient(ellipse at 30% 40%, 
+            rgba(255, 255, 255, 0.2) 0%, 
+            transparent 50%);
+      }
+      
+      // 앞발 (팔)
+      .cat-arm {
+        position: absolute;
+        width: 42px;
+        height: 70px;
+        background: linear-gradient(180deg, 
+          #d4a574 0%, 
+          #c19660 50%, 
+          #b08652 100%);
+        top: 15px;
+        
+        &.arm-left {
+          left: -12px;
+          border-radius: 40% 60% 52% 48% / 70% 30% 70% 30%;
+          transform: rotate(-18deg);
+          transform-origin: top center;
+          animation: arm-wave-left 4s ease-in-out infinite;
+          box-shadow: 
+            inset 6px 6px 12px rgba(255, 255, 255, 0.2),
+            inset -4px -4px 8px rgba(0, 0, 0, 0.2),
+            -3px 6px 12px rgba(0, 0, 0, 0.2);
+          
+          .paw-front {
+            position: absolute;
+            width: 34px;
+            height: 36px;
+            background: linear-gradient(180deg, 
+              #d4a574 0%, 
+              #c19660 100%);
+            bottom: -10px;
+            left: 3px;
+            border-radius: 48% 52% 52% 48%;
+            box-shadow: 
+              inset 0 -3px 6px rgba(0, 0, 0, 0.15),
+              0 4px 8px rgba(0, 0, 0, 0.2);
+            
+            // 발가락
+            .toe {
+              position: absolute;
+              width: 8px;
+              height: 10px;
+              background: linear-gradient(145deg, 
+                #a06a4c 0%, 
+                #8b5a3c 50%, 
+                #654321 100%);
+              border-radius: 55% 45% 50% 50%;
+              box-shadow: 
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+                0 1px 2px rgba(0, 0, 0, 0.1);
+              
+              &:nth-child(1) {
+                top: 5px;
+                left: 4px;
+                transform: rotate(-10deg);
+              }
+              &:nth-child(2) {
+                top: 2px;
+                left: 13px;
+              }
+              &:nth-child(3) {
+                top: 5px;
+                right: 4px;
+                transform: rotate(10deg);
+              }
+            }
+            
+            // 발바닥 메인 패드
+            .main-pad {
+              position: absolute;
+              width: 16px;
+              height: 13px;
+              background: linear-gradient(145deg, 
+                #a06a4c 0%, 
+                #8b5a3c 100%);
+              border-radius: 52% 48% 55% 45%;
+              bottom: 6px;
+              left: 50%;
+              transform: translateX(-50%);
+              box-shadow: 
+                inset 0 -2px 3px rgba(0, 0, 0, 0.3),
+                0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+        
+        &.arm-right {
+          right: -12px;
+          border-radius: 60% 40% 48% 52% / 70% 30% 70% 30%;
+          transform: rotate(18deg);
+          transform-origin: top center;
+          animation: arm-wave-right 4s ease-in-out infinite;
+          animation-delay: 0.5s;
+          box-shadow: 
+            inset -6px 6px 12px rgba(255, 255, 255, 0.2),
+            inset 4px -4px 8px rgba(0, 0, 0, 0.2),
+            3px 6px 12px rgba(0, 0, 0, 0.2);
+          
+          .paw-front {
+            position: absolute;
+            width: 34px;
+            height: 36px;
+            background: linear-gradient(180deg, 
+              #d4a574 0%, 
+              #c19660 100%);
+            bottom: -10px;
+            right: 3px;
+            border-radius: 52% 48% 48% 52%;
+            box-shadow: 
+              inset 0 -3px 6px rgba(0, 0, 0, 0.15),
+              0 4px 8px rgba(0, 0, 0, 0.2);
+            
+            .toe {
+              position: absolute;
+              width: 8px;
+              height: 10px;
+              background: linear-gradient(145deg, 
+                #a06a4c 0%, 
+                #8b5a3c 50%, 
+                #654321 100%);
+              border-radius: 55% 45% 50% 50%;
+              box-shadow: 
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+                0 1px 2px rgba(0, 0, 0, 0.1);
+              
+              &:nth-child(1) {
+                top: 5px;
+                left: 4px;
+                transform: rotate(-10deg);
+              }
+              &:nth-child(2) {
+                top: 2px;
+                left: 13px;
+              }
+              &:nth-child(3) {
+                top: 5px;
+                right: 4px;
+                transform: rotate(10deg);
+              }
+            }
+            
+            .main-pad {
+              position: absolute;
+              width: 16px;
+              height: 13px;
+              background: linear-gradient(145deg, 
+                #a06a4c 0%, 
+                #8b5a3c 100%);
+              border-radius: 52% 48% 55% 45%;
+              bottom: 6px;
+              left: 50%;
+              transform: translateX(-50%);
+              box-shadow: 
+                inset 0 -2px 3px rgba(0, 0, 0, 0.3),
+                0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+      }
+      
+      // 뒷발
+      .cat-paw {
+        position: absolute;
+        width: 35px;
+        height: 40px;
+        background: linear-gradient(180deg, 
+          #c19660 0%, 
+          #b08652 100%);
+        border-radius: 50% 50% 48% 48%;
+        bottom: -30px;
+        box-shadow: 
+          inset 0 -3px 6px rgba(0, 0, 0, 0.15),
+          0 4px 10px rgba(0, 0, 0, 0.25);
+        
+        &.paw-left {
+          left: 20px;
+          animation: back-paw-left 5s infinite;
+        }
+        
+        &.paw-right {
+          right: 20px;
+          animation: back-paw-right 5s infinite;
+          animation-delay: 2.5s;
+        }
+        
+        .paw-pad {
+          width: 20px;
+          height: 14px;
+          background: linear-gradient(145deg, 
+            #a06a4c 0%, 
+            #8b5a3c 100%);
+          border-radius: 50%;
+          position: absolute;
+          bottom: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    
+    .cat-tail {
+      position: absolute;
+      width: 100px;
+      height: 30px;
+      right: -85px;
+      bottom: 10px;
+      transform-origin: 10% 50%;
+      animation: tail-wag 5s ease-in-out infinite;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+          #b08652 0%, 
+          #c19660 30%, 
+          #d4a574 70%, 
+          #dab785 100%);
+        border-radius: 30% 70% 70% 30% / 50% 50% 50% 50%;
+        box-shadow: 
+          inset 0 -4px 8px rgba(0, 0, 0, 0.15),
+          0 5px 12px rgba(0, 0, 0, 0.25);
+      }
+      
+      // 꼬리 끝 부분 (볼륨)
+      &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 35px;
+        background: linear-gradient(135deg, 
+          #d4a574 0%, 
+          #dab785 50%, 
+          #e2c09c 100%);
+        right: -12px;
+        top: -2px;
+        border-radius: 50%;
+        box-shadow: 
+          inset 3px 3px 6px rgba(255, 255, 255, 0.3),
+          inset -3px -3px 6px rgba(0, 0, 0, 0.15),
+          0 3px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+.error-404-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  
+  .four {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 
+      3px 3px 0 #ff6b6b,
+      6px 6px 0 #feca57,
+      9px 9px 0 #48dbfb,
+      12px 12px 20px rgba(0, 0, 0, 0.3);
+    animation: wiggle 2s ease-in-out infinite;
+    font-family: 'Comic Sans MS', cursive;
+    
+    &:first-child {
+      animation-delay: 0.1s;
+    }
+    
+    &:last-child {
+      animation-delay: 0.3s;
+    }
+  }
+  
+  .zero {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      inset 0 -5px 15px rgba(255, 182, 193, 0.3);
+    animation: rotate-slow 10s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .paw-print {
+      position: relative;
+      transform: rotate(-20deg);
+      
+      .pad {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+        
+        &.main-pad {
+          width: 28px;
+          height: 32px;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+        &.toe-1 {
+          width: 14px;
+          height: 16px;
+          top: -14px;
+          left: 6px;
+        }
+        
+        &.toe-2 {
+          width: 14px;
+          height: 16px;
+          top: -17px;
+          left: 24px;
+        }
+        
+        &.toe-3 {
+          width: 14px;
+          height: 16px;
+          top: -14px;
+          left: 42px;
+        }
+        
+        &.toe-4 {
+          width: 14px;
+          height: 16px;
+          top: -4px;
+          left: 48px;
+        }
+      }
+    }
+  }
+}
+
+.error-404-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.error-404-message {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.floating-items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  
+  .item {
+    position: absolute;
+    font-size: 2rem;
+    animation: float-items 15s infinite ease-in-out;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+    
+    &.yarn-ball {
+      top: 15%;
+      left: 10%;
+      animation-duration: 18s;
+    }
+    
+    &.fish {
+      top: 70%;
+      right: 15%;
+      animation-duration: 20s;
+      animation-delay: 2s;
+    }
+    
+    &.heart {
+      top: 25%;
+      right: 20%;
+      animation-duration: 16s;
+      animation-delay: 1s;
+    }
+    
+    &.star {
+      bottom: 30%;
+      left: 15%;
+      animation-duration: 22s;
+      animation-delay: 3s;
+    }
+    
+    &.paw {
+      top: 60%;
+      left: 50%;
+      animation-duration: 19s;
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+.error-404-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  z-index: 20;
+  position: relative;
+  
+  button {
+    border-radius: 30px;
+    padding: 0 2.5rem;
+    height: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 
+      0 6px 20px rgba(0, 0, 0, 0.25),
+      inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &.btn-home {
+      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+      border: none;
+      color: #fff;
+    }
+    
+    &.btn-search {
+      background: #fff;
+      border: 2px solid #ff6b6b;
+      color: #ff6b6b;
+    }
+    
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    &:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+  }
+}
+
+.cat-toys {
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+  
+  .toy {
+    position: absolute;
+    
+    &.toy-1 {
+      left: 20%;
+      
+      .string {
+        width: 2px;
+        height: 60px;
+        background: linear-gradient(to bottom, #999 0%, #666 100%);
+        margin-left: 15px;
+        transform-origin: top center;
+        animation: swing 2s ease-in-out infinite;
+      }
+      
+      .ball {
+        font-size: 1.5rem;
+        animation: swing 2s ease-in-out infinite;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      }
+    }
+    
+    &.toy-2 {
+      right: 20%;
+      
+      .mouse {
+        font-size: 1.8rem;
+        animation: mouse-run 3s infinite;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+}
+
+.speech-bubble {
+  position: absolute;
+  top: -60px;
+  right: 50%;
+  transform: translateX(50%);
+  background: #fff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  animation: bubble-pop 4s infinite;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.1));
+  }
+  
+  span {
+    font-size: 1.3rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cat-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes head-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+}
+
+@keyframes ear-twitch-left {
+  0%, 88%, 100% {
+    transform: rotate(-22deg);
+  }
+  92%, 96% {
+    transform: rotate(-28deg);
+  }
+}
+
+@keyframes ear-twitch-right {
+  0%, 85%, 100% {
+    transform: rotate(22deg);
+  }
+  89%, 93% {
+    transform: rotate(28deg);
+  }
+}
+
+@keyframes blink-cat {
+  0%, 88%, 100% {
+    height: 35px;
+  }
+  92%, 96% {
+    height: 3px;
+  }
+}
+
+@keyframes pupil-dilate {
+  0%, 100% {
+    width: 20px;
+    height: 24px;
+  }
+  50% {
+    width: 16px;
+    height: 20px;
+  }
+}
+
+@keyframes tail-wag {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes arm-wave-left {
+  0%, 100% {
+    transform: rotate(-18deg);
+  }
+  25% {
+    transform: rotate(-25deg) translateY(-3px);
+  }
+  50% {
+    transform: rotate(-12deg) translateY(-6px);
+  }
+  75% {
+    transform: rotate(-20deg) translateY(-3px);
+  }
+}
+
+@keyframes arm-wave-right {
+  0%, 100% {
+    transform: rotate(18deg);
+  }
+  25% {
+    transform: rotate(12deg) translateY(-3px);
+  }
+  50% {
+    transform: rotate(25deg) translateY(-6px);
+  }
+  75% {
+    transform: rotate(20deg) translateY(-3px);
+  }
+}
+
+@keyframes back-paw-left {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes back-paw-right {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes float-items {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-30px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(0) rotate(180deg);
+  }
+  75% {
+    transform: translateY(30px) rotate(270deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes mouse-run {
+  0%, 100% {
+    transform: translateX(0) scaleX(1);
+  }
+  25% {
+    transform: translateX(20px) scaleX(-1);
+  }
+  50% {
+    transform: translateX(0) scaleX(-1);
+  }
+  75% {
+    transform: translateX(-20px) scaleX(1);
+  }
+}
+
+@keyframes bubble-pop {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(50%) scale(0.8);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(50%) scale(1);
+  }
+}
+
+// Responsive
+@include mobile {
+  .cat-container .cat {
+    transform: scale(0.8);
+  }
+  
+  .error-404-number {
+    .four {
+      font-size: 4rem;
+    }
+    
+    .zero {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  .error-404-title {
+    font-size: 1.5rem;
+  }
+  
+  .error-404-message {
+    font-size: 1rem;
+  }
+  
+  .error-404-actions {
+    flex-direction: column;
+    align-items: center;
+    
+    button {
+      width: 200px;
+    }
+  }
+}

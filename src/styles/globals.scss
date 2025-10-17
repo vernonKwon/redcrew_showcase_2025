@@ -1,0 +1,95 @@
+@import "./variables";
+@import "./mixins";
+
+// 레이아웃 컴포넌트 스타일 (SSR/SSG 호환)
+@import "../components/header/header";
+@import "../components/footer/footer";
+@import "../components/layout/default-layout/DefaultLayout";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $font-color-primary;
+}
+
+#__next {
+  min-height: 100vh;
+}
+
+// 전역 스타일을 특정 클래스 아래에만 적용
+.with-global-styles {
+  min-height: 100vh;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $font-color-primary;
+  background-color: $background-color;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  // 기본 컨테이너
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include mobile {
+      padding: 0 16px;
+    }
+  }
+
+  // 컴포넌트별 스타일을 여기에 포함
+  @import "./components/_home";
+}
+
+// no-global-styles 클래스를 위한 최소 스타일
+.no-global-styles {
+  min-height: 100vh;
+}

@@ -1,0 +1,47 @@
+// Colors
+$primary-color: #6a63dd;
+$primary-hover-color: #554fc8;
+$secondary-color: #f0f0f5;
+$font-color-primary: #333333;
+$font-color-secondary: #888888;
+$border-color: #e0e0e0;
+$background-color: #ffffff;
+$disabled-color: #cccccc;
+$green-color: #4caf50;
+$orange-color: #ff9800;
+
+// Spacing
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 24px;
+
+// Border Radius
+$border-radius: 8px;
+
+// 기존 변수들 (하위 호환성을 위해 유지)
+$primary: #6a63dd;
+$secondary: #f0f0f5;
+$success: #4caf50;
+$danger: #dc3545;
+$warning: #ff9800;
+$info: #17a2b8;
+
+// 중립 색상
+$white: #ffffff;
+$black: #000000;
+$gray: #888888;
+$gray-dark: #333333;
+$gray-light: #f0f0f5;
+
+// 타이포그래피
+$font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// 반응형 브레이크포인트
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1280px;
+
+// 기본 설정
+$transition: all 0.3s ease;

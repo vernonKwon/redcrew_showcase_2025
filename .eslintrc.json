@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@stylistic/ts"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/alt-text": [1],
+    "no-console": [2],
+    "@stylistic/ts/comma-dangle": ["error", "only-multiline"],
+    "react/jsx-one-expression-per-line" : [0],
+    "@typescript-eslint/semi" : [0],
+    "react/jsx-props-no-spreading" : [0],
+    "object-curly-newline": [0],
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
+    "@typescript-eslint/naming-convention": [
+    "error",
+    {
+      "selector": "enumMember",
+      "format": ["UPPER_CASE"]
+    }
+  ]
+  }
+}
