@@ -1,0 +1,154 @@
+.footer {
+  background: $dark-bg-secondary;
+  border-top: 1px solid rgba($red-primary, 0.2);
+  padding: 3rem 1rem;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  &__brand {
+    @include mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, $red-primary, $red-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+  }
+
+  &__logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $red-primary;
+  }
+
+  &__description {
+    font-family: 'Inter', sans-serif;
+    color: #9ca3af;
+    margin-bottom: 1rem;
+    max-width: 24rem;
+    line-height: 1.6;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba($red-primary, 0.2);
+    border: 1px solid rgba($red-primary, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+    text-decoration: none;
+
+    &:hover {
+      background: $red-primary;
+      border-color: $red-primary;
+
+      .footer__social-icon {
+        color: $white;
+      }
+    }
+  }
+
+  &__social-icon {
+    color: $red-primary;
+    transition: $transition;
+  }
+
+  &__links,
+  &__event-info {
+    // Layout handled by grid
+  }
+
+  &__section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 1rem;
+  }
+
+  &__link-list,
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link-item {
+    // List item styles
+  }
+
+  &__link {
+    font-family: 'Inter', sans-serif;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: $transition;
+    text-align: left;
+    padding: 0;
+
+    &:hover {
+      color: $red-primary;
+    }
+  }
+
+  &__info-item {
+    font-family: 'Inter', sans-serif;
+    color: #9ca3af;
+
+    &--highlight {
+      color: $red-primary;
+      font-weight: 600;
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba($red-primary, 0.2);
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  &__copyright {
+    font-family: 'Inter', sans-serif;
+    color: #6b7280;
+  }
+}

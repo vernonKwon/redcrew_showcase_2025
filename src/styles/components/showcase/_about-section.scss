@@ -1,0 +1,115 @@
+.about-section {
+  padding: 5rem 1rem;
+  position: relative;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: $white;
+
+    @include mobile {
+      font-size: 3.75rem;
+    }
+  }
+
+  &__title-highlight {
+    color: $red-primary;
+  }
+
+  &__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 48rem;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__image {
+    order: 2;
+
+    @include tablet {
+      order: 1;
+    }
+
+    img {
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__achievements {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include tablet {
+      order: 2;
+    }
+  }
+
+  &__achievement {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__achievement-icon {
+    width: 3rem;
+    height: 3rem;
+    background: $red-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: $white;
+  }
+
+  &__achievement-content {
+    flex: 1;
+  }
+
+  &__achievement-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $red-primary;
+    margin-bottom: 0.5rem;
+  }
+
+  &__achievement-description {
+    font-family: 'Inter', sans-serif;
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+}

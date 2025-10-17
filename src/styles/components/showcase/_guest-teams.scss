@@ -1,0 +1,133 @@
+.guest-teams {
+  padding: 5rem 1rem;
+  background: $dark-bg-secondary;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: $white;
+
+    @include mobile {
+      font-size: 3.75rem;
+    }
+  }
+
+  &__title-highlight {
+    color: $red-primary;
+  }
+
+  &__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    background: $dark-bg;
+    border: 1px solid rgba($red-primary, 0.3);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: $transition;
+
+    &:hover {
+      border-color: rgba($red-primary, 0.6);
+      transform: scale(1.05);
+
+      .guest-teams__image img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      transition: $transition;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  &__style {
+    font-family: 'Inter', sans-serif;
+    color: $red-primary;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  &__team-description {
+    font-family: 'Inter', sans-serif;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__established {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__social-icon {
+    color: $red-primary;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      color: $red-secondary;
+    }
+  }
+}

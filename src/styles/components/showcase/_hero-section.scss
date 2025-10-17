@@ -1,0 +1,284 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $dark-bg, rgba($red-primary, 0.2), $dark-bg-secondary);
+  }
+
+  &__animation {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+
+    &--primary {
+      top: 5rem;
+      left: 2.5rem;
+      width: 8rem;
+      height: 8rem;
+      background: rgba($red-primary, 0.3);
+      animation: pulse-scale 3s infinite;
+    }
+
+    &--secondary {
+      bottom: 5rem;
+      right: 2.5rem;
+      width: 12rem;
+      height: 12rem;
+      background: rgba($red-secondary, 0.2);
+      filter: blur(80px);
+      animation: float 2s infinite;
+    }
+
+    &--accent {
+      top: 50%;
+      left: 33%;
+      width: 6rem;
+      height: 6rem;
+      background: rgba($orange-color, 0.4);
+      filter: blur(20px);
+      animation: pulse-scale 2s infinite;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 5rem;
+    }
+
+    @include tablet {
+      font-size: 6rem;
+    }
+  }
+
+  &__gradient-text {
+    background: linear-gradient(90deg, $red-primary, $red-secondary, $orange-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 1.5rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 32rem;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__countdown {
+    margin-bottom: 3rem;
+  }
+
+  &__countdown-label {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: $red-primary;
+      font-size: 1.125rem;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    @include mobile {
+      gap: 2rem;
+    }
+  }
+
+  &__countdown-item {
+    background: rgba($dark-bg-secondary, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba($red-primary, 0.3);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    min-width: 5rem;
+
+    @include mobile {
+      padding: 1.5rem;
+    }
+  }
+
+  &__countdown-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $red-primary;
+
+    @include mobile {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__countdown-unit {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #9ca3af;
+
+    @include mobile {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__event-ended {
+    text-align: center;
+    padding: 2rem;
+
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $orange-color;
+      margin: 0;
+
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    transition: $transition;
+    cursor: pointer;
+    border: none;
+
+    &--primary {
+      background: linear-gradient(90deg, $red-primary, $red-secondary);
+      color: $white;
+
+      &:hover {
+        background: linear-gradient(90deg, $red-secondary, $red-primary);
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba($red-primary, 0.5);
+      }
+    }
+
+    &--outline {
+      border: 2px solid $red-primary;
+      color: $red-primary;
+      background: transparent;
+
+      &:hover {
+        background: $red-primary;
+        color: $white;
+      }
+    }
+  }
+
+  &__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 1.5s infinite;
+  }
+
+  &__scroll-line {
+    width: 0.25rem;
+    height: 4rem;
+    background: linear-gradient(180deg, $red-primary, transparent);
+    border-radius: 9999px;
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
