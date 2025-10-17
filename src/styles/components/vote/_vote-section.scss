@@ -1,0 +1,449 @@
+.vote-section {
+  position: relative;
+  min-height: 100vh;
+  background: $dark-bg;
+  color: $white;
+  overflow-x: hidden;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $dark-bg, rgba($red-primary, 0.1), $dark-bg-secondary);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    @include mobile {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  &__back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $red-primary;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: $transition;
+
+    &:hover {
+      color: $red-secondary;
+      transform: translateX(-4px);
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+
+    @include mobile {
+      font-size: 2.5rem;
+    }
+
+    @include tablet {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__title-highlight {
+    background: linear-gradient(90deg, $red-primary, $red-secondary, $orange-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include mobile {
+      gap: 3rem;
+    }
+  }
+
+  &__category {
+    background: rgba($dark-bg-secondary, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba($red-primary, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: $transition;
+
+    @include mobile {
+      padding: 1.5rem;
+    }
+
+    &:hover {
+      border-color: rgba($red-primary, 0.4);
+      box-shadow: 0 8px 32px rgba($red-primary, 0.1);
+    }
+  }
+
+  &__category-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+
+  &__category-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, $red-primary, $red-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    flex-shrink: 0;
+
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
+
+  &__category-info {
+    flex: 1;
+  }
+
+  &__category-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: $red-primary;
+    margin-bottom: 0.5rem;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__category-description {
+    font-family: 'Inter', sans-serif;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  &__category-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+    font-size: 0.875rem;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__option {
+    background: rgba($dark-bg-secondary, 0.8);
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: $transition;
+    position: relative;
+
+    &:hover {
+      border-color: rgba($red-primary, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba($red-primary, 0.2);
+    }
+
+    &--selected {
+      border-color: $red-primary;
+      box-shadow: 0 0 20px rgba($red-primary, 0.3);
+    }
+
+    &--voted {
+      cursor: default;
+      
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+
+  &__option-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__option-year {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba($red-primary, 0.9);
+    color: $white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  &__option-content {
+    padding: 1.5rem;
+  }
+
+  &__option-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: $white;
+    margin-bottom: 0.75rem;
+  }
+
+  &__option-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+
+  &__option-location {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: $red-primary;
+    font-weight: 500;
+  }
+
+  &__option-established {
+    color: #9ca3af;
+    font-weight: 400;
+  }
+
+  &__option-description {
+    font-family: 'Inter', sans-serif;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  &__option-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__option-votes {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $red-primary;
+    font-weight: 500;
+  }
+
+  &__option-percentage {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: $orange-color;
+  }
+
+  &__option-progress {
+    margin-top: 1rem;
+    height: 4px;
+    background: rgba($red-primary, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__option-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, $red-primary, $orange-color);
+    border-radius: 2px;
+    transition: width 0.8s ease;
+  }
+
+  &__option-selected {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background: $red-primary;
+    color: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+  }
+
+  &__submit {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  &__submit-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(90deg, $red-primary, $red-secondary);
+    color: $white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background: linear-gradient(90deg, $red-secondary, $red-primary);
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba($red-primary, 0.4);
+    }
+  }
+
+  &__voted {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  &__voted-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba($orange-color, 0.2);
+    color: $orange-color;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: 1px solid rgba($orange-color, 0.3);
+  }
+
+  &__footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($red-primary, 0.2);
+  }
+
+  &__footer-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: $red-primary;
+    margin-bottom: 1rem;
+  }
+
+  &__footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: $white;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  &__footer-note {
+    font-family: 'Inter', sans-serif;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+// Vote page container
+.vote-page {
+  background: $dark-bg;
+  color: $white;
+  min-height: 100vh;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
