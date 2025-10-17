@@ -28,6 +28,7 @@
       "selector": "enumMember",
       "format": ["UPPER_CASE"]
     }
-  ]
+  ],
+  "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
   }
 }

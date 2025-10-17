@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import type { NextPageWithLayout } from '@/pages/_app'
-import AdminLayout from '@/components/layout/admin-layout/AdminLayout'
+import DefaultLayout from '@/components/layout/default-layout/DefaultLayout'
 import Link from 'next/link'
 
 const ProductList: NextPageWithLayout = () => {
@@ -58,7 +58,7 @@ const ProductList: NextPageWithLayout = () => {
 }
 
 ProductList.getLayout = function getLayout(page: ReactElement) {
-  return <AdminLayout>{page}</AdminLayout>
+  return <DefaultLayout>{page}</DefaultLayout>
 }
 
 export default ProductList

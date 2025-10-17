@@ -1,41 +1,39 @@
 import Head from 'next/head'
-import type { NextPageWithLayout } from './_app'
+import { NextPageWithLayout } from './_app'
+import Navigation from '@/components/showcase/navigation/Navigation'
+import HeroSection from '@/components/showcase/hero-section/HeroSection'
+import AboutSection from '@/components/showcase/about-section/AboutSection'
+import HistoryTimeline from '@/components/showcase/history-timeline/HistoryTimeline'
+import ShowcaseSection from '@/components/showcase/showcase-section/ShowcaseSection'
+import GuestTeams from '@/components/showcase/guest-teams/GuestTeams'
+import ContactSection from '@/components/showcase/contact-section/ContactSection'
+import Footer from '@/components/showcase/footer/Footer'
 
-// 기본 레이아웃을 사용하는 페이지 (DefaultLayout 자동 적용)
-// SCSS는 전역으로 자동 적용되므로 별도 import 불필요
 const HomePage: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Shop - Home</title>
-        <meta name="description" content="Welcome to our shop" />
+        <title>RED CREW - 10주년 파이널 쇼케이스</title>
+        <meta name="description" content="레드크루 10주년 파이널 쇼케이스 - 10년간의 열정과 땀이 담긴 마지막 무대" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="container">
-        <h1 className="home-title">홈 페이지</h1>
-        <p className="home-description">
-          이 페이지는 기본 레이아웃(DefaultLayout)과 전역 스타일이 적용됩니다.
-        </p>
-
-        <div className="home-features">
-          <div className="home-card">
-            <h3>기능 1</h3>
-            <p>기본 레이아웃 사용</p>
-          </div>
-          <div className="home-card">
-            <h3>기능 2</h3>
-            <p>전역 스타일 적용</p>
-          </div>
-          <div className="home-card">
-            <h3>기능 3</h3>
-            <p>SCSS 자동 적용</p>
-          </div>
-        </div>
+      <div className="showcase-page">
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <HistoryTimeline />
+        <ShowcaseSection />
+        <GuestTeams />
+        <ContactSection />
+        <Footer />
       </div>
     </>
   )
 }
+
+// 이 페이지는 기본 레이아웃을 사용하지 않음
+HomePage.getLayout = (page) => page
 
 export default HomePage

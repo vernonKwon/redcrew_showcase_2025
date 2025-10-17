@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import type { NextPageWithLayout } from '@/pages/_app'
-import AdminLayout from '@/components/layout/admin-layout/AdminLayout'
+import DefaultLayout from '@/components/layout/default-layout/DefaultLayout'
 import { Button } from 'antd'
 
 const ProductEditor: NextPageWithLayout = () => {
@@ -19,7 +19,7 @@ const ProductEditor: NextPageWithLayout = () => {
 }
 
 ProductEditor.getLayout = function getLayout(page: ReactElement) {
-  return <AdminLayout>{page}</AdminLayout>
+  return <DefaultLayout>{page}</DefaultLayout>
 }
 
 export default ProductEditor

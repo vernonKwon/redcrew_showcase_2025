@@ -3,10 +3,12 @@ import { combineReducers, UnknownAction } from '@reduxjs/toolkit'
 import { HYDRATE } from 'next-redux-wrapper'
 import user from '@/redux/reducer/user'
 import counterReducer from '@/redux/reducer/counter'
+import showcaseReducer from '@/redux/reducer/showcaseSlice'
 
 const combinedReducer = combineReducers({
   user,
   counter: counterReducer,
+  showcase: showcaseReducer,
 })
 
 export type RootState = ReturnType<typeof combinedReducer>

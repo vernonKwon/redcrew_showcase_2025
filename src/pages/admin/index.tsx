@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import type { NextPageWithLayout } from '@/pages/_app'
-import AdminLayout from '@/components/layout/admin-layout/AdminLayout'
+import DefaultLayout from '@/components/layout/default-layout/DefaultLayout'
 
 const AdminDashboard: NextPageWithLayout = () => {
   return (
@@ -57,7 +57,7 @@ const AdminDashboard: NextPageWithLayout = () => {
 }
 
 AdminDashboard.getLayout = function getLayout(page: ReactElement) {
-  return <AdminLayout>{page}</AdminLayout>
+  return <DefaultLayout>{page}</DefaultLayout>
 }
 
 export default AdminDashboard
