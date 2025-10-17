@@ -87,6 +87,7 @@ yarn analyze
 - **ESLint**: React hooks 규칙 적용, 프로덕션에서 console.log 금지
 - **TypeScript**: 경로 별칭 `@/`는 `src/` 디렉토리에 매핑
 - **Redux**: Redux Toolkit 리듀서에서 Immer를 통한 상태 변경 허용
+- **커밋 메시지**: 모든 커밋 메시지는 한글로 작성
 
 ### 스타일링 적용 방식
 이 프로젝트는 **글로벌 SCSS** 방식을 사용합니다:
