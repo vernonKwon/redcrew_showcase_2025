@@ -6,6 +6,7 @@
 @import "../components/footer/footer";
 @import "../components/layout/default-layout/DefaultLayout";
 
+// 글로벌 기본 스타일 (SSR 호환)
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +41,61 @@ body {
   min-height: 100vh;
 }
 
-// 전역 스타일을 특정 클래스 아래에만 적용
+// 글로벌 링크/버튼/이미지 스타일 (모든 페이지에 적용)
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// 기본 컨테이너 (모든 페이지에서 사용 가능)
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include mobile {
+    padding: 0 16px;
+  }
+}
+
+// 컴포넌트별 스타일 (SSR 호환으로 글로벌 레벨에 포함)
+@import "./components/_home";
+
+// Showcase 컴포넌트 스타일 (SSR 호환)
+@import "./components/showcase/showcase-page";
+@import "./components/showcase/navigation";
+@import "./components/showcase/hero-section";
+@import "./components/showcase/about-section";
+@import "./components/showcase/history-timeline";
+@import "./components/showcase/showcase-section";
+@import "./components/showcase/guest-teams";
+@import "./components/showcase/contact-section";
+@import "./components/showcase/footer";
+
+// Vote 컴포넌트 스타일 (SSR 호환)
+@import "./components/vote/vote-section";
+
+// 전역 스타일을 특정 클래스 아래에만 적용 (레이아웃 사용 페이지)
 .with-global-styles {
   min-height: 100vh;
   font-family: $font-family;
@@ -48,45 +103,6 @@ body {
   line-height: $line-height-base;
   color: $font-color-primary;
   background-color: $background-color;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  button {
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-family: inherit;
-  }
-
-  input,
-  textarea,
-  select {
-    font-family: inherit;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  // 기본 컨테이너
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-
-    @include mobile {
-      padding: 0 16px;
-    }
-  }
-
-  // 컴포넌트별 스타일을 여기에 포함
-  @import "./components/_home";
 }
 
 // no-global-styles 클래스를 위한 최소 스타일
