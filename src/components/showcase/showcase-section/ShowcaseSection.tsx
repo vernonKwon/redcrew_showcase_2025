@@ -18,13 +18,13 @@ export default function ShowcaseSection() {
       icon: Calendar,
       title: '일정',
       primary: '2025년 12월 14일',
-      secondary: '오후 2:00 - 4:30'
+      secondary: '오후 2:00 - 6:00'
     },
     {
       icon: MapPin,
       title: '장소',
-      primary: '올림픽공원 체조경기장',
-      secondary: '서울특별시 송파구 올림픽로 424'
+      primary: '중랑구민회관 대공연장',
+      secondary: '서울특별시 중랑구'
     },
     {
       icon: Ticket,

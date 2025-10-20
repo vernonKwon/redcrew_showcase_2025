@@ -11,46 +11,32 @@ interface GuestTeam {
 export default function GuestTeams() {
   const guestTeams: GuestTeam[] = [
     {
-      name: 'BLUE STORM',
+      name: 'PRE-BXXCH',
       style: 'Hip-Hop / Urban',
-      description: '부산을 대표하는 힙합 댄스팀. 강렬한 퍼포먼스와 독창적인 안무로 유명',
+      description: '강렬한 비트와 독창적인 안무로 무대를 압도하는 실력파 댄스팀',
       established: 'Est. 2018',
       image: 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
     },
     {
-      name: 'GOLDEN WAVE',
+      name: 'PENTAGON',
       style: 'Contemporary / Jazz',
-      description: '감성적이고 우아한 무브먼트로 관객들의 마음을 사로잡는 대구의 실력파 팀',
+      description: '정교한 테크닉과 감성적인 표현력으로 관객들의 마음을 사로잡는 팀',
       established: 'Est. 2016',
       image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
     },
     {
-      name: 'URBAN KINGS',
+      name: 'ONESHOT CREW',
       style: 'Breaking / Popping',
-      description: '스트릿 댄스의 본고장 서울에서 활동하는 올드스쿨의 강자들',
+      description: '한 번의 기회로 모든 것을 보여주는 강력한 퍼포먼스의 대가들',
       established: 'Est. 2015',
       image: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
     },
     {
-      name: 'RHYTHM SOULS',
-      style: 'R&B / Choreography',
-      description: '감미로운 리듬과 정교한 안무로 무장한 광주의 신예 강자',
-      established: 'Est. 2019',
-      image: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
-    },
-    {
-      name: 'ELECTRIC MINDS',
-      style: 'Krump / Experimental',
-      description: '혁신적인 스타일과 강렬한 에너지로 무대를 뒤흔드는 인천의 실험적 팀',
-      established: 'Est. 2020',
-      image: 'https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
-    },
-    {
-      name: 'LEGACY CREW',
-      style: 'All-Style / Fusion',
-      description: '다양한 장르를 융합한 독창적 스타일로 유명한 전주의 베테랑 팀',
+      name: 'Art company SOUL',
+      style: 'Contemporary / Artistic',
+      description: '예술적 감성과 깊이 있는 스토리텔링으로 무장한 창작 댄스팀',
       established: 'Est. 2017',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
+      image: 'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300'
     }
   ]
 

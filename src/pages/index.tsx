@@ -13,8 +13,8 @@ const HomePage: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>RED CREW - 10주년 파이널 쇼케이스</title>
-        <meta name="description" content="레드크루 10주년 파이널 쇼케이스 - 10년간의 열정과 땀이 담긴 마지막 무대" />
+        <title>RED CREW - 댄서들의 축제, 10년간의 활동 종료</title>
+        <meta name="description" content="레드크루 파이널 쇼케이스 - 10년의 열정, 하나의 무대" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

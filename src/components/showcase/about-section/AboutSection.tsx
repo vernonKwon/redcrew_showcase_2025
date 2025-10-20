@@ -33,7 +33,7 @@ export default function AboutSection() {
             <span className="about-section__title-highlight">RED CREW</span>의 이야기
           </h2>
           <p className="about-section__description">
-            2014년부터 시작된 우리의 여정. 열정 하나로 시작해 10년간 함께 성장해온 댄스크루입니다.
+            2015년부터 시작된 우리의 여정. 열정 하나로 시작해 10년간 함께 성장해온 댄스크루입니다.
           </p>
         </div>
 

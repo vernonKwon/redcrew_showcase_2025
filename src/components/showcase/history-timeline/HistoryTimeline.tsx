@@ -9,7 +9,7 @@ interface TimelineEvent {
 export default function HistoryTimeline() {
   const timelineEvents: TimelineEvent[] = [
     {
-      year: '2014',
+      year: '2015',
       title: '레드크루 결성',
       description: '춤에 대한 열정 하나로 모인 5명의 멤버들. 작은 연습실에서 시작된 우리의 꿈',
       side: 'left'

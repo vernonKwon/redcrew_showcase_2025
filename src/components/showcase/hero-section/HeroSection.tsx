@@ -58,12 +58,12 @@ export default function HeroSection() {
         <div className="hero-section__title">
           <h1 className="hero-section__main-title">
             <span className="hero-section__gradient-text">
-              RED CREW (이강용 바보)
+              RED CREW
             </span>
           </h1>
-          <div className="hero-section__subtitle">10주년 파이널 쇼케이스</div>
+          <div className="hero-section__subtitle">댄서들의 축제, 10년간의 활동 종료</div>
           <div className="hero-section__description">
-            10년간의 열정과 땀이 담긴 마지막 무대.
+            10년의 열정, 하나의 무대.
             <br />
             레드크루의 대단원의 막을 함께해주세요.
           </div>
