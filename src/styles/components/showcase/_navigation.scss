@@ -3,9 +3,10 @@
   top: 0;
   width: 100%;
   z-index: 50;
-  background: rgba($dark-bg, 0.9);
+  background: rgba($white, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba($red-primary, 0.2);
+  border-bottom: 1px solid rgba($gray-light, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
   &__container {
     max-width: 1280px;
@@ -31,23 +32,21 @@
   &__logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-
-    &-icon {
-      width: 2rem;
-      height: 2rem;
-      background: linear-gradient(135deg, $red-primary, $red-secondary);
-      border-radius: 50%;
+    
+    a {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: $white;
+      transition: opacity 0.3s;
+      
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
-    &-text {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
+    img {
+      height: 2.25rem;
+      width: auto;
+      object-fit: contain;
       color: $red-primary;
     }
   }
@@ -64,15 +63,33 @@
 
     &-item {
       font-family: 'Inter', sans-serif;
-      color: $white;
+      color: $gray-dark;
+      font-weight: 500;
       background: none;
       border: none;
       cursor: pointer;
       transition: $transition;
       padding: 0.5rem 0;
+      position: relative;
 
       &:hover {
         color: $red-primary;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: $red-primary;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
       }
     }
   }
@@ -81,7 +98,7 @@
     display: block;
     background: none;
     border: none;
-    color: $white;
+    color: $gray-dark;
     cursor: pointer;
 
     @include tablet {
@@ -90,9 +107,10 @@
   }
 
   &__mobile-menu {
-    background: rgba($dark-bg, 0.95);
+    background: rgba($white, 0.98);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba($red-primary, 0.2);
+    border-bottom: 1px solid rgba($gray-light, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
     @include tablet {
       display: none;
@@ -111,15 +129,22 @@
     width: 100%;
     text-align: left;
     font-family: 'Inter', sans-serif;
-    color: $white;
+    color: $gray-dark;
+    font-weight: 500;
     background: none;
     border: none;
     cursor: pointer;
     transition: $transition;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba($gray-light, 0.3);
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     &:hover {
       color: $red-primary;
+      padding-left: 0.5rem;
     }
   }
 }
