@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import { Menu, X, Flame } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+import LogoImage from '@/asset/REWIND_NUGGI.png'
 
 interface NavItem {
   href: string
@@ -33,10 +35,15 @@ export default function Navigation() {
       <div className="navigation__container">
         <div className="navigation__content">
           <div className="navigation__logo">
-            <div className="navigation__logo-icon">
-              <Flame size={16} />
-            </div>
-            <span className="navigation__logo-text">RED CREW</span>
+            <Link href="/">
+              <Image 
+                src={LogoImage} 
+                alt="REWIND - RED CREW 10th Anniversary Showcase" 
+                width={150}
+                height={40}
+                priority
+              />
+            </Link>
           </div>
           
           <div className="navigation__menu navigation__menu--desktop">
