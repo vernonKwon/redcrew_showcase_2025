@@ -121,14 +121,9 @@ export default function ShowcaseSection() {
         </div>
 
         <div className="showcase-section__details">
-          {eventDetails.map((detail) =>
-            detail.title === '일정' ? (
-              <div
-                key={detail.title}
-                className="showcase-section__detail-card"
-                onClick={handleCalendarClick}
-                style={{ cursor: 'pointer' }}
-              >
+          {eventDetails.map((detail) => {
+            const cardContent = (
+              <div className="showcase-section__detail-card">
                 <div className="showcase-section__detail-icon">
                   <detail.icon size={24} />
                 </div>
@@ -144,27 +139,22 @@ export default function ShowcaseSection() {
                   </p>
                 </div>
               </div>
+            )
+
+            return detail.title === '일정' ? (
+              <div
+                key={detail.title}
+                onClick={handleCalendarClick}
+                style={{ cursor: 'pointer' }}
+              >
+                {cardContent}
+              </div>
             ) : (
               <Link href={detail.url} target="blank" key={detail.title}>
-                <div className="showcase-section__detail-card">
-                  <div className="showcase-section__detail-icon">
-                    <detail.icon size={24} />
-                  </div>
-                  <h3 className="showcase-section__detail-title">
-                    {detail.title}
-                  </h3>
-                  <div className="showcase-section__detail-content">
-                    <p className="showcase-section__detail-primary">
-                      {detail.primary}
-                    </p>
-                    <p className="showcase-section__detail-secondary">
-                      {detail.secondary}
-                    </p>
-                  </div>
-                </div>
+                {cardContent}
               </Link>
             )
-          )}
+          })}
         </div>
 
         <div className="showcase-section__highlights">
