@@ -87,7 +87,7 @@ export default function HeroSection() {
               ].map((unit) => (
                 <div key={unit.label} className="hero-section__countdown-item">
                   <div className="hero-section__countdown-value">
-                    {unit.value}
+                    {String(unit.value).padStart(2, '0')}
                   </div>
                   <div className="hero-section__countdown-unit">{unit.label}</div>
                 </div>
