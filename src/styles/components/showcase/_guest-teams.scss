@@ -7,6 +7,14 @@
     margin: 0 auto;
   }
 
+  &__section {
+    margin-bottom: 6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &__header {
     text-align: center;
     margin-bottom: 4rem;
@@ -15,12 +23,20 @@
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     margin-bottom: 1.5rem;
     color: $white;
 
     @include mobile {
-      font-size: 3.75rem;
+      font-size: 2rem;
+    }
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+
+    @include desktop {
+      font-size: 3rem;
     }
   }
 
@@ -30,22 +46,35 @@
 
   &__description {
     font-family: 'Inter', sans-serif;
-    font-size: 1.125rem;
+    font-size: 0.875rem;
     color: #9ca3af;
     max-width: 32rem;
     margin: 0 auto;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet {
+      font-size: 1.125rem;
+    }
   }
 
   &__grid {
     display: grid;
     gap: 2rem;
+    grid-template-columns: 1fr;
 
-    @include mobile {
-      grid-template-columns: repeat(2, 1fr);
+    &--crew {
+      @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
-    @include desktop {
-      grid-template-columns: repeat(3, 1fr);
+    &--guest {
+      @include desktop {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 
