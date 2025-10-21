@@ -193,22 +193,18 @@ export default function VoteSection() {
 
   const submitVote = (categoryId: string) => {
     if (!selectedVotes[categoryId]) return
-    
+
     setHasVoted(prev => ({
       ...prev,
       [categoryId]: true
     }))
-    
+
     // 여기서 실제 투표 API 호출 예정
     alert('투표가 완료되었습니다! 감사합니다.')
   }
 
   const getTotalVotes = (options: VoteOption[]) => {
     return options.reduce((total, option) => total + option.votes, 0)
-  }
-
-  const getVotePercentage = (votes: number, totalVotes: number) => {
-    return totalVotes > 0 ? Math.round((votes / totalVotes) * 100) : 0
   }
 
   return (
@@ -238,7 +234,7 @@ export default function VoteSection() {
           {voteCategories.map((category) => {
             const totalVotes = getTotalVotes(category.options)
             const IconComponent = category.icon
-            
+
             return (
               <div key={category.id} className="vote-section__category">
                 <div className="vote-section__category-header">
@@ -259,8 +255,7 @@ export default function VoteSection() {
                   {category.options.map((option) => {
                     const isSelected = selectedVotes[category.id] === option.id
                     const isVoted = hasVoted[category.id]
-                    const percentage = getVotePercentage(option.votes, totalVotes)
-                    
+
                     return (
                       <div
                         key={option.id}
@@ -282,27 +277,6 @@ export default function VoteSection() {
                             <span className="vote-section__option-established">{option.established}</span>
                           </div>
                           <p className="vote-section__option-description">{option.description}</p>
-                          
-                          <div className="vote-section__option-stats">
-                            <div className="vote-section__option-votes">
-                              <Heart size={16} />
-                              <span>{option.votes.toLocaleString()}표</span>
-                            </div>
-                            {isVoted && (
-                              <div className="vote-section__option-percentage">
-                                {percentage}%
-                              </div>
-                            )}
-                          </div>
-                          
-                          {isVoted && (
-                            <div className="vote-section__option-progress">
-                              <div 
-                                className="vote-section__option-progress-bar"
-                                style={{ width: `${percentage}%` }}
-                              ></div>
-                            </div>
-                          )}
                         </div>
                         
                         {isSelected && !isVoted && (
