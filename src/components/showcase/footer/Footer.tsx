@@ -32,12 +32,17 @@ export default function Footer() {
   const socialLinks: SocialLink[] = [
     {
       icon: Instagram,
-      href: '#',
+      href: 'https://www.instagram.com/redcrew_korea',
+      className: 'hover:text-white',
+    },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/red_99_0819',
       className: 'hover:text-white',
     },
     {
       icon: Youtube,
-      href: '#',
+      href: 'https://www.youtube.com/@레드크루',
       className: 'hover:text-white',
     },
   ]
@@ -71,6 +76,8 @@ export default function Footer() {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="footer-social-link"
                 >
                   <social.icon

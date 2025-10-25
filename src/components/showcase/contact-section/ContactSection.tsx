@@ -1,4 +1,4 @@
-import { Phone, Mail, Instagram, Send, LucideProps } from 'lucide-react'
+import { Mail, Instagram, Send, LucideProps } from 'lucide-react'
 import { useAppDispatch, useAppSelector } from '@/lib/reduxHooks'
 import {
   updateContactForm,
@@ -11,6 +11,7 @@ interface ContactInfo {
   icon: React.ComponentType<LucideProps>
   title: string
   value: string
+  href: string
 }
 
 export default function ContactSection() {
@@ -47,19 +48,16 @@ export default function ContactSection() {
 
   const contactInfo: ContactInfo[] = [
     {
-      icon: Phone,
-      title: '전화',
-      value: '010-1234-5678',
-    },
-    {
       icon: Mail,
       title: '이메일',
-      value: 'redcrew.official@email.com',
+      value: 'redcrew_@naver.com',
+      href: 'mailto:redcrew_@naver.com',
     },
     {
       icon: Instagram,
       title: '인스타그램',
-      value: '@redcrew_official',
+      value: '@redcrew_korea',
+      href: 'https://www.instagram.com/redcrew_korea',
     },
   ]
 
@@ -82,7 +80,13 @@ export default function ContactSection() {
               <h3 className="contact-section-info-title">연락처 정보</h3>
               <div className="contact-section-info-list">
                 {contactInfo.map((info) => (
-                  <div key={info.title} className="contact-section-info-item">
+                  <a
+                    key={info.title}
+                    href={info.href}
+                    target={info.title === '인스타그램' ? '_blank' : undefined}
+                    rel={info.title === '인스타그램' ? 'noopener noreferrer' : undefined}
+                    className="contact-section-info-item"
+                  >
                     <div className="contact-section-info-icon">
                       <info.icon size={20} />
                     </div>
@@ -94,7 +98,7 @@ export default function ContactSection() {
                         {info.value}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
