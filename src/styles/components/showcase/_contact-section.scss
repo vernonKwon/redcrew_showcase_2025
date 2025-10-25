@@ -13,7 +13,7 @@
   }
 
   &__title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
@@ -37,7 +37,7 @@
   }
 
   &__description {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
     max-width: 32rem;
@@ -72,7 +72,7 @@
   }
 
   &__info-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     color: $red-primary;
@@ -108,54 +108,15 @@
   }
 
   &__info-label {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: $white;
     margin-bottom: 0.25rem;
   }
 
   &__info-value {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: #9ca3af;
-  }
-
-  &__quick-links {
-    // Quick links styles
-  }
-
-  &__links-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: $white;
-    margin-bottom: 1rem;
-  }
-
-  &__links-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  &__link-item {
-    display: flex;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-    color: #9ca3af;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: $transition;
-    text-align: left;
-    padding: 0;
-
-    &:hover {
-      color: $red-primary;
-    }
-  }
-
-  &__link-icon {
-    margin-right: 0.5rem;
   }
 
   &__form {
@@ -166,7 +127,7 @@
   }
 
   &__form-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
     color: $white;
@@ -186,7 +147,7 @@
 
   &__label {
     display: block;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.875rem;
     color: #d1d5db;
     margin-bottom: 0.5rem;
@@ -201,7 +162,7 @@
     color: $white;
     border-radius: 0.5rem;
     padding: 0.75rem;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     transition: $transition;
 
     &:focus {
@@ -223,7 +184,7 @@
     width: 100%;
     background: linear-gradient(90deg, $red-primary, $red-secondary);
     color: $white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -256,7 +217,7 @@
     color: #dc3545;
     padding: 0.75rem;
     border-radius: 0.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.875rem;
   }
 }

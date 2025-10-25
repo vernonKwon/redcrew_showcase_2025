@@ -6,6 +6,7 @@ import AboutSection from '@/components/showcase/about-section/AboutSection'
 import HistoryTimeline from '@/components/showcase/history-timeline/HistoryTimeline'
 import ShowcaseSection from '@/components/showcase/showcase-section/ShowcaseSection'
 import GuestTeams from '@/components/showcase/guest-teams/GuestTeams'
+import LocationSection from '@/components/showcase/location-section/LocationSection'
 import ContactSection from '@/components/showcase/contact-section/ContactSection'
 import Footer from '@/components/showcase/footer/Footer'
 
@@ -26,6 +27,7 @@ const HomePage: NextPageWithLayout = () => {
         <HistoryTimeline />
         <ShowcaseSection />
         <GuestTeams />
+        <LocationSection />
         <ContactSection />
         <Footer />
       </div>

@@ -21,7 +21,7 @@
   }
 
   &__title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
@@ -45,7 +45,7 @@
   }
 
   &__description {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
     max-width: 32rem;
@@ -108,10 +108,13 @@
 
   &__content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 170px;
   }
 
   &__name {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
     color: $white;
@@ -119,18 +122,19 @@
   }
 
   &__style {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: $red-primary;
     font-weight: 600;
     margin-bottom: 0.75rem;
   }
 
   &__team-description {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: #9ca3af;
     font-size: 0.875rem;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     line-height: 1.6;
+    flex: 1;
   }
 
   &__footer {
@@ -140,7 +144,7 @@
   }
 
   &__established {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     color: #6b7280;
   }

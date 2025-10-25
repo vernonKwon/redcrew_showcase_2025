@@ -1,0 +1,166 @@
+.location-section {
+  padding: 5rem 1rem;
+  background: $dark-bg;
+  position: relative;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: $white;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+
+    @include desktop {
+      font-size: 3rem;
+    }
+  }
+
+  &__title-highlight {
+    color: $red-primary;
+  }
+
+  &__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: #9ca3af;
+    max-width: 48rem;
+    margin: 0 auto;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__map {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba($red-primary, 0.3);
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 400px;
+
+      @include mobile {
+        height: 450px;
+      }
+    }
+  }
+
+  &__info {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__info-card {
+    background: $dark-bg-secondary;
+    border: 1px solid rgba($red-primary, 0.3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    transition: $transition;
+
+    &:hover {
+      border-color: rgba($red-primary, 0.6);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__info-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, $red-primary, $red-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: $white;
+  }
+
+  &__info-content {
+    flex: 1;
+  }
+
+  &__info-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  &__info-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: #d1d5db;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+
+  &__subway {
+    display: inline-block;
+    background: #6b4d9f;
+    color: $white;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+
+    @include mobile {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__parking-note {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-style: italic;
+
+    @include mobile {
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -76,7 +76,7 @@ export default function ShowcaseSection() {
       icon: MapPin,
       title: '장소',
       primary: '중랑구민회관 대공연장',
-      secondary: '서울특별시 중랑구',
+      secondary: '서울특별시 중랑구 · 약 500석 규모',
       url: 'https://naver.me/xBwKuRs6',
     },
     {

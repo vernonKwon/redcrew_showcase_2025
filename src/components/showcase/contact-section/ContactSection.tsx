@@ -1,13 +1,4 @@
-import {
-  Phone,
-  Mail,
-  Instagram,
-  Ticket,
-  MapPin,
-  Calendar,
-  Send,
-  LucideProps,
-} from 'lucide-react'
+import { Phone, Mail, Instagram, Send, LucideProps } from 'lucide-react'
 import { useAppDispatch, useAppSelector } from '@/lib/reduxHooks'
 import {
   updateContactForm,
@@ -20,12 +11,6 @@ interface ContactInfo {
   icon: React.ComponentType<LucideProps>
   title: string
   value: string
-}
-
-interface QuickLink {
-  icon: React.ComponentType<LucideProps>
-  text: string
-  action: () => void
 }
 
 export default function ContactSection() {
@@ -78,19 +63,6 @@ export default function ContactSection() {
     },
   ]
 
-  const quickLinks: QuickLink[] = [
-    {
-      icon: MapPin,
-      text: '공연장 위치 안내',
-      action: () => alert('공연장 위치를 확인합니다.'),
-    },
-    {
-      icon: Calendar,
-      text: '일정 캘린더에 추가',
-      action: () => alert('캘린더에 일정을 추가합니다.'),
-    },
-  ]
-
   return (
     <section id="contact" className="contact-section">
       <div className="contact-section__container">
@@ -123,25 +95,6 @@ export default function ContactSection() {
                       </p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="contact-section__quick-links">
-              <h4 className="contact-section__links-title">빠른 링크</h4>
-              <div className="contact-section__links-list">
-                {quickLinks.map((link) => (
-                  <button
-                    key={link.text}
-                    onClick={link.action}
-                    className="contact-section__link-item"
-                  >
-                    <link.icon
-                      className="contact-section__link-icon"
-                      size={16}
-                    />
-                    {link.text}
-                  </button>
                 ))}
               </div>
             </div>
