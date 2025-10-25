@@ -3,17 +3,18 @@
   background: $dark-bg-secondary;
   position: relative;
 
-  &__container {
+  &-container {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  &__header {
+  // ============= Header 그룹 =============
+  &-header {
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  &__title {
+  &-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -31,13 +32,13 @@
     @include desktop {
       font-size: 3rem;
     }
+
+    &-highlight {
+      color: $red-primary;
+    }
   }
 
-  &__title-highlight {
-    color: $red-primary;
-  }
-
-  &__description {
+  &-description {
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
@@ -53,11 +54,12 @@
     }
   }
 
-  &__content {
+  // ============= Content 그룹 =============
+  &-content {
     position: relative;
   }
 
-  &__line {
+  &-line {
     position: absolute;
     left: 1rem;
     top: 0;
@@ -71,13 +73,14 @@
     }
   }
 
-  &__events {
+  &-events {
     display: flex;
     flex-direction: column;
     gap: 3rem;
   }
 
-  &__event {
+  // ============= Event 그룹 =============
+  &-event {
     position: relative;
     display: flex;
     align-items: center;
@@ -88,21 +91,42 @@
       }
     }
 
-    &--special &__card {
-      background: linear-gradient(135deg, rgba($red-primary, 0.2), rgba($orange-color, 0.2));
-      border-color: $orange-color;
+    &--special {
+      .history-timeline-card {
+        background: linear-gradient(135deg, rgba($red-primary, 0.2), rgba($orange-color, 0.2));
+        border-color: $orange-color;
+      }
+
+      .history-timeline-year {
+        color: $orange-color;
+      }
+
+      .history-timeline-event-description {
+        color: #d1d5db;
+      }
+
+      .history-timeline-dot {
+        background: linear-gradient(90deg, $red-primary, $orange-color);
+      }
     }
 
-    &--special &__year {
-      color: $orange-color;
+    &-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: $white;
+      margin-bottom: 0.75rem;
     }
 
-    &--special &__event-description {
-      color: #d1d5db;
+    &-description {
+      font-family: 'Inter', sans-serif;
+      color: #9ca3af;
+      line-height: 1.6;
     }
   }
 
-  &__dot {
+  // ============= Dot 그룹 =============
+  &-dot {
     position: absolute;
     left: 0;
     width: 2rem;
@@ -120,24 +144,21 @@
       transform: translateX(-50%);
     }
 
-    .history-timeline__event--special & {
-      background: linear-gradient(90deg, $red-primary, $orange-color);
+    &-inner {
+      width: 0.75rem;
+      height: 0.75rem;
+      background: $white;
+      border-radius: 50%;
     }
   }
 
-  &__star {
+  &-star {
     color: $white;
     font-size: 0.875rem;
   }
 
-  &__dot-inner {
-    width: 0.75rem;
-    height: 0.75rem;
-    background: $white;
-    border-radius: 50%;
-  }
-
-  &__card {
+  // ============= Card 그룹 =============
+  &-card {
     margin-left: 4rem;
     background: $dark-bg;
     border: 1px solid rgba($red-primary, 0.3);
@@ -149,11 +170,11 @@
       margin-left: 0;
       width: calc(50% - 2rem);
 
-      .history-timeline__event--right & {
+      .history-timeline-event--right & {
         margin-left: 2rem;
       }
 
-      .history-timeline__event--left & {
+      .history-timeline-event--left & {
         margin-right: 2rem;
       }
     }
@@ -163,25 +184,11 @@
     }
   }
 
-  &__year {
+  &-year {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     color: $red-primary;
     margin-bottom: 0.5rem;
-  }
-
-  &__event-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: $white;
-    margin-bottom: 0.75rem;
-  }
-
-  &__event-description {
-    font-family: 'Inter', sans-serif;
-    color: #9ca3af;
-    line-height: 1.6;
   }
 }

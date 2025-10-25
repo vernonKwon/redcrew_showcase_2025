@@ -32,9 +32,9 @@ export default function Navigation() {
 
   return (
     <nav className="navigation">
-      <div className="navigation__container">
-        <div className="navigation__content">
-          <div className="navigation__logo">
+      <div className="navigation-container">
+        <div className="navigation-content">
+          <div className="navigation-logo">
             <Link href="/">
               <Image 
                 src={LogoImage} 
@@ -46,13 +46,13 @@ export default function Navigation() {
             </Link>
           </div>
           
-          <div className="navigation__menu navigation__menu--desktop">
+          <div className="navigation-menu navigation-menu--desktop">
             {navItems.map((item) => (
               item.isExternal ? (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="navigation__menu-item"
+                  className="navigation-menu-item"
                 >
                   {item.label}
                 </Link>
@@ -60,7 +60,7 @@ export default function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="navigation__menu-item"
+                  className="navigation-menu-item"
                 >
                   {item.label}
                 </button>
@@ -69,7 +69,7 @@ export default function Navigation() {
           </div>
           
           <button
-            className="navigation__toggle"
+            className="navigation-toggle"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -78,14 +78,14 @@ export default function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="navigation__mobile-menu">
-          <div className="navigation__mobile-content">
+        <div className="navigation-mobile-menu">
+          <div className="navigation-mobile-content">
             {navItems.map((item) => (
               item.isExternal ? (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="navigation__mobile-item"
+                  className="navigation-mobile-item"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -94,7 +94,7 @@ export default function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="navigation__mobile-item"
+                  className="navigation-mobile-item"
                 >
                   {item.label}
                 </button>

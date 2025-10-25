@@ -8,7 +8,7 @@
   border-bottom: 1px solid rgba($gray-light, 0.5);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-  &__container {
+  &-container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -22,36 +22,37 @@
     }
   }
 
-  &__content {
+  &-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 4rem;
   }
 
-  &__logo {
+  &-logo {
     display: flex;
     align-items: center;
-    
+
     a {
       display: flex;
       align-items: center;
       transition: opacity 0.3s;
-      
+      line-height: 0;
+
       &:hover {
         opacity: 0.7;
       }
-    }
 
-    img {
-      height: 2.25rem;
-      width: auto;
-      object-fit: contain;
-      color: $red-primary;
+      img {
+        height: 2.25rem;
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
     }
   }
 
-  &__menu {
+  &-menu {
     &--desktop {
       display: none;
       gap: 2rem;
@@ -74,6 +75,10 @@
 
       &:hover {
         color: $red-primary;
+
+        &::after {
+          transform: scaleX(1);
+        }
       }
 
       &::after {
@@ -87,64 +92,62 @@
         transform: scaleX(0);
         transition: transform 0.3s;
       }
+    }
+  }
 
-      &:hover::after {
-        transform: scaleX(1);
+  &-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: $gray-dark;
+    cursor: pointer;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &-mobile {
+    &-menu {
+      background: rgba($white, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba($gray-light, 0.5);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      @include tablet {
+        display: none;
       }
     }
-  }
 
-  &__toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: $gray-dark;
-    cursor: pointer;
-
-    @include tablet {
-      display: none;
-    }
-  }
-
-  &__mobile-menu {
-    background: rgba($white, 0.98);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba($gray-light, 0.5);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-    @include tablet {
-      display: none;
-    }
-  }
-
-  &__mobile-content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  &__mobile-item {
-    display: block;
-    width: 100%;
-    text-align: left;
-    font-family: 'Inter', sans-serif;
-    color: $gray-dark;
-    font-weight: 500;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: $transition;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba($gray-light, 0.3);
-
-    &:last-child {
-      border-bottom: none;
+    &-content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    &:hover {
-      color: $red-primary;
-      padding-left: 0.5rem;
+    &-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      color: $gray-dark;
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: $transition;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba($gray-light, 0.3);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: $red-primary;
+        padding-left: 0.5rem;
+      }
     }
   }
 }

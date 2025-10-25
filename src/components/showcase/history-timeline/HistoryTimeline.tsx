@@ -49,41 +49,41 @@ export default function HistoryTimeline() {
 
   return (
     <section id="history" className="history-timeline">
-      <div className="history-timeline__container">
-        <div className="history-timeline__header">
-          <h2 className="history-timeline__title">
-            <span className="history-timeline__title-highlight">10년</span>의 여정
+      <div className="history-timeline-container">
+        <div className="history-timeline-header">
+          <h2 className="history-timeline-title">
+            <span className="history-timeline-title-highlight">10년</span>의 여정
           </h2>
-          <p className="history-timeline__description">
+          <p className="history-timeline-description">
             레드크루가 걸어온 길, 그리고 함께 만들어온 추억들을 되돌아봅니다.
           </p>
         </div>
 
-        <div className="history-timeline__content">
-          <div className="history-timeline__line"></div>
+        <div className="history-timeline-content">
+          <div className="history-timeline-line"></div>
 
-          <div className="history-timeline__events">
+          <div className="history-timeline-events">
             {timelineEvents.map((event) => (
               <div 
                 key={event.year}
-                className={`history-timeline__event history-timeline__event--${event.side} ${event.special ? 'history-timeline__event--special' : ''}`}
+                className={`history-timeline-event history-timeline-event--${event.side} ${event.special ? 'history-timeline-event--special' : ''}`}
               >
-                <div className="history-timeline__dot">
+                <div className="history-timeline-dot">
                   {event.special ? (
-                    <span className="history-timeline__star">★</span>
+                    <span className="history-timeline-star">★</span>
                   ) : (
-                    <div className="history-timeline__dot-inner"></div>
+                    <div className="history-timeline-dot-inner"></div>
                   )}
                 </div>
 
-                <div className="history-timeline__card">
-                  <div className="history-timeline__year">
+                <div className="history-timeline-card">
+                  <div className="history-timeline-year">
                     {event.year}
                   </div>
-                  <h3 className="history-timeline__event-title">
+                  <h3 className="history-timeline-event-title">
                     {event.title}
                   </h3>
-                  <p className="history-timeline__event-description">
+                  <p className="history-timeline-event-description">
                     {event.description}
                   </p>
                 </div>

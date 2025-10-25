@@ -2,17 +2,18 @@
   padding: 5rem 1rem;
   position: relative;
 
-  &__container {
+  &-container {
     max-width: 64rem;
     margin: 0 auto;
   }
 
-  &__header {
+  // ============= Header 그룹 =============
+  &-header {
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  &__title {
+  &-title {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -30,13 +31,13 @@
     @include desktop {
       font-size: 3rem;
     }
+
+    &-highlight {
+      color: $red-primary;
+    }
   }
 
-  &__title-highlight {
-    color: $red-primary;
-  }
-
-  &__description {
+  &-description {
     font-family: "Inter", sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
@@ -52,7 +53,8 @@
     }
   }
 
-  &__content {
+  // ============= Content 그룹 =============
+  &-content {
     display: grid;
     gap: 3rem;
 
@@ -61,91 +63,89 @@
     }
   }
 
-  &__info {
+  // ============= Info 그룹 =============
+  &-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    &-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: $red-primary;
+      margin-bottom: 1.5rem;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    &-icon {
+      width: 3rem;
+      height: 3rem;
+      background: $red-primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: $white;
+    }
+
+    &-content {
+      flex: 1;
+    }
+
+    &-label {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      color: $white;
+      margin-bottom: 0.25rem;
+    }
+
+    &-value {
+      font-family: "Inter", sans-serif;
+      color: #9ca3af;
+    }
   }
 
-  &__contact-info {
-    // Contact info styles
-  }
-
-  &__info-title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: $red-primary;
-    margin-bottom: 1.5rem;
-  }
-
-  &__info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  &__info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  &__info-icon {
-    width: 3rem;
-    height: 3rem;
-    background: $red-primary;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: $white;
-  }
-
-  &__info-content {
-    flex: 1;
-  }
-
-  &__info-label {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    color: $white;
-    margin-bottom: 0.25rem;
-  }
-
-  &__info-value {
-    font-family: "Inter", sans-serif;
-    color: #9ca3af;
-  }
-
-  &__form {
+  // ============= Form 그룹 =============
+  &-form {
     background: $dark-bg-secondary;
     border: 1px solid rgba($red-primary, 0.3);
     border-radius: 1rem;
     padding: 2rem;
+
+    &-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $white;
+      margin-bottom: 1.5rem;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
 
-  &__form-title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: $white;
-    margin-bottom: 1.5rem;
-  }
-
-  &__form-content {
+  &-field {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  &__field {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__label {
+  &-label {
     display: block;
     font-family: "Inter", sans-serif;
     font-size: 0.875rem;
@@ -153,9 +153,9 @@
     margin-bottom: 0.5rem;
   }
 
-  &__input,
-  &__select,
-  &__textarea {
+  &-input,
+  &-select,
+  &-textarea {
     width: 100%;
     background: $dark-bg;
     border: 1px solid rgba($red-primary, 0.3);
@@ -175,12 +175,12 @@
     }
   }
 
-  &__textarea {
+  &-textarea {
     resize: none;
     min-height: 6rem;
   }
 
-  &__submit {
+  &-submit {
     width: 100%;
     background: linear-gradient(90deg, $red-primary, $red-secondary);
     color: $white;
@@ -207,11 +207,7 @@
     }
   }
 
-  &__submit-icon {
-    // Icon styles handled by parent
-  }
-
-  &__error {
+  &-error {
     background: rgba(#dc3545, 0.1);
     border: 1px solid rgba(#dc3545, 0.3);
     color: #dc3545;

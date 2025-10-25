@@ -5,18 +5,18 @@
   color: $white;
   overflow-x: hidden;
 
-  &__background {
+  &-background {
     position: absolute;
     inset: 0;
   }
 
-  &__gradient {
+  &-gradient {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, $dark-bg, rgba($red-primary, 0.1), $dark-bg-secondary);
   }
 
-  &__container {
+  &-container {
     position: relative;
     z-index: 10;
     max-width: 1200px;
@@ -28,7 +28,7 @@
     }
   }
 
-  &__back-link {
+  &-back-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -45,7 +45,7 @@
     }
   }
 
-  &__header {
+  &-header {
     text-align: center;
     margin-bottom: 4rem;
 
@@ -54,7 +54,7 @@
     }
   }
 
-  &__title {
+  &-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 3rem;
@@ -69,14 +69,14 @@
     }
   }
 
-  &__title-highlight {
+  &-title-highlight {
     background: linear-gradient(90deg, $red-primary, $red-secondary, $orange-color);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
 
-  &__description {
+  &-description {
     font-family: 'Inter', sans-serif;
     font-size: 1.125rem;
     color: #9ca3af;
@@ -89,7 +89,7 @@
     }
   }
 
-  &__categories {
+  &-categories {
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -99,7 +99,7 @@
     }
   }
 
-  &__category {
+  &-category {
     background: rgba($dark-bg-secondary, 0.6);
     backdrop-filter: blur(12px);
     border: 1px solid rgba($red-primary, 0.2);
@@ -117,7 +117,7 @@
     }
   }
 
-  &__category-header {
+  &-category-header {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
@@ -130,7 +130,7 @@
     }
   }
 
-  &__category-icon {
+  &-category-icon {
     width: 3rem;
     height: 3rem;
     background: linear-gradient(135deg, $red-primary, $red-secondary);
@@ -146,11 +146,11 @@
     }
   }
 
-  &__category-info {
+  &-category-info {
     flex: 1;
   }
 
-  &__category-title {
+  &-category-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.75rem;
@@ -162,14 +162,14 @@
     }
   }
 
-  &__category-description {
+  &-category-description {
     font-family: 'Inter', sans-serif;
     color: #d1d5db;
     margin-bottom: 1rem;
     line-height: 1.5;
   }
 
-  &__category-stats {
+  &-category-stats {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -181,7 +181,7 @@
     }
   }
 
-  &__options {
+  &-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -192,7 +192,7 @@
     }
   }
 
-  &__option {
+  &-option {
     background: rgba($dark-bg-secondary, 0.8);
     border: 2px solid transparent;
     border-radius: 0.75rem;
@@ -221,7 +221,7 @@
     }
   }
 
-  &__option-image {
+  &-option-image {
     position: relative;
     height: 200px;
     overflow: hidden;
@@ -238,7 +238,7 @@
     }
   }
 
-  &__option-year {
+  &-option-year {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -251,11 +251,11 @@
     font-size: 0.875rem;
   }
 
-  &__option-content {
+  &-option-content {
     padding: 1.5rem;
   }
 
-  &__option-title {
+  &-option-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.125rem;
@@ -263,7 +263,7 @@
     margin-bottom: 0.75rem;
   }
 
-  &__option-meta {
+  &-option-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -277,7 +277,7 @@
     }
   }
 
-  &__option-location {
+  &-option-location {
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -285,12 +285,12 @@
     font-weight: 500;
   }
 
-  &__option-established {
+  &-option-established {
     color: #9ca3af;
     font-weight: 400;
   }
 
-  &__option-description {
+  &-option-description {
     font-family: 'Inter', sans-serif;
     color: #9ca3af;
     font-size: 0.875rem;
@@ -298,13 +298,13 @@
     margin-bottom: 1rem;
   }
 
-  &__option-stats {
+  &-option-stats {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__option-votes {
+  &-option-votes {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -312,13 +312,13 @@
     font-weight: 500;
   }
 
-  &__option-percentage {
+  &-option-percentage {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: $orange-color;
   }
 
-  &__option-progress {
+  &-option-progress {
     margin-top: 1rem;
     height: 4px;
     background: rgba($red-primary, 0.2);
@@ -326,14 +326,14 @@
     overflow: hidden;
   }
 
-  &__option-progress-bar {
+  &-option-progress-bar {
     height: 100%;
     background: linear-gradient(90deg, $red-primary, $orange-color);
     border-radius: 2px;
     transition: width 0.8s ease;
   }
 
-  &__option-selected {
+  &-option-selected {
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -349,12 +349,12 @@
     animation: pulse 1.5s infinite;
   }
 
-  &__submit {
+  &-submit {
     margin-top: 2rem;
     text-align: center;
   }
 
-  &__submit-button {
+  &-submit-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -376,12 +376,12 @@
     }
   }
 
-  &__voted {
+  &-voted {
     margin-top: 2rem;
     text-align: center;
   }
 
-  &__voted-message {
+  &-voted-message {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -394,19 +394,19 @@
     border: 1px solid rgba($orange-color, 0.3);
   }
 
-  &__footer {
+  &-footer {
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid rgba($red-primary, 0.2);
   }
 
-  &__footer-content {
+  &-footer-content {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
   }
 
-  &__footer-title {
+  &-footer-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
@@ -414,7 +414,7 @@
     margin-bottom: 1rem;
   }
 
-  &__footer-info {
+  &-footer-info {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -424,7 +424,7 @@
     font-weight: 500;
   }
 
-  &__footer-note {
+  &-footer-note {
     font-family: 'Inter', sans-serif;
     color: #9ca3af;
     font-size: 0.875rem;

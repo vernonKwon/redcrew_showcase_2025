@@ -29,41 +29,41 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="about-section">
-      <div className="about-section__container">
-        <div className="about-section__header">
-          <h2 className="about-section__title">
-            <span className="about-section__title-highlight">RED CREW</span>의
+      <div className="about-section-container">
+        <div className="about-section-header">
+          <h2 className="about-section-title">
+            <span className="about-section-title-highlight">RED CREW</span>의
             이야기
           </h2>
-          <p className="about-section__description">
+          <p className="about-section-description">
             열정,경고,개성을 표현할때 제일 눈에 띄는 컬러인 &apos;레드&apos;
             처럼 각자 매력이 있는 멤버들을 모아 한 팀으로 활동하는 댄스
             크루입니다
           </p>
         </div>
 
-        <div className="about-section__content">
-          <div className="about-section__image">
+        <div className="about-section-content">
+          <div className="about-section-image">
             <img
               src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
               alt="Dance performance on stage with dramatic lighting"
             />
           </div>
 
-          <div className="about-section__achievements">
+          <div className="about-section-achievements">
             {achievements.map((achievement) => (
               <div
                 key={achievement.title}
-                className="about-section__achievement"
+                className="about-section-achievement"
               >
-                <div className="about-section__achievement-icon">
+                <div className="about-section-achievement-icon">
                   <achievement.icon size={20} />
                 </div>
-                <div className="about-section__achievement-content">
-                  <h3 className="about-section__achievement-title">
+                <div className="about-section-achievement-content">
+                  <h3 className="about-section-achievement-title">
                     {achievement.title}
                   </h3>
-                  <p className="about-section__achievement-description">
+                  <p className="about-section-achievement-description">
                     {achievement.description}
                   </p>
                 </div>

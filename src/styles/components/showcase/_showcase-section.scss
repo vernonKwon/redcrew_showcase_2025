@@ -2,17 +2,18 @@
   padding: 5rem 1rem;
   position: relative;
 
-  &__container {
+  &-container {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  &__header {
+  // ============= Header 그룹 =============
+  &-header {
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  &__title {
+  &-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -30,13 +31,13 @@
     @include desktop {
       font-size: 3rem;
     }
+
+    &-highlight {
+      color: $red-primary;
+    }
   }
 
-  &__title-highlight {
-    color: $red-primary;
-  }
-
-  &__description {
+  &-description {
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
@@ -52,7 +53,8 @@
     }
   }
 
-  &__details {
+  // ============= Details 그룹 =============
+  &-details {
     display: grid;
     gap: 2rem;
     margin-bottom: 4rem;
@@ -67,60 +69,63 @@
     }
   }
 
-  &__detail-card {
-    background: $dark-bg-secondary;
-    border: 1px solid rgba($red-primary, 0.3);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: $transition;
+  &-detail {
+    &-card {
+      background: $dark-bg-secondary;
+      border: 1px solid rgba($red-primary, 0.3);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: $transition;
 
-    &:hover {
-      border-color: rgba($red-primary, 0.6);
-      transform: scale(1.05);
+      &:hover {
+        border-color: rgba($red-primary, 0.6);
+        transform: scale(1.05);
+      }
+    }
+
+    &-icon {
+      width: 4rem;
+      height: 4rem;
+      background: linear-gradient(135deg, $red-primary, $red-secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: $white;
+    }
+
+    &-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $white;
+      margin-bottom: 1rem;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &-primary {
+      font-family: 'Inter', sans-serif;
+      color: $red-primary;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    &-secondary {
+      font-family: 'Inter', sans-serif;
+      color: #9ca3af;
+      font-size: 0.875rem;
     }
   }
 
-  &__detail-icon {
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(135deg, $red-primary, $red-secondary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: $white;
-  }
-
-  &__detail-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: $white;
-    margin-bottom: 1rem;
-  }
-
-  &__detail-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  &__detail-primary {
-    font-family: 'Inter', sans-serif;
-    color: $red-primary;
-    font-weight: 600;
-    font-size: 1.125rem;
-  }
-
-  &__detail-secondary {
-    font-family: 'Inter', sans-serif;
-    color: #9ca3af;
-    font-size: 0.875rem;
-  }
-
-  &__highlights {
+  // ============= Highlights 그룹 =============
+  &-highlights {
     display: grid;
     gap: 3rem;
     align-items: center;
@@ -128,61 +133,61 @@
     @include tablet {
       grid-template-columns: 1fr 1fr;
     }
+
+    &-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.875rem;
+      color: $red-primary;
+      margin-bottom: 1.5rem;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    &-image {
+      img {
+        border-radius: 1rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 
-  &__highlights-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.875rem;
-    color: $red-primary;
-    margin-bottom: 1.5rem;
-  }
-
-  &__highlights-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  &__highlight {
+  &-highlight {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-  }
 
-  &__highlight-dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    background: $red-primary;
-    border-radius: 50%;
-    margin-top: 0.75rem;
-    flex-shrink: 0;
-  }
+    &-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: $red-primary;
+      border-radius: 50%;
+      margin-top: 0.75rem;
+      flex-shrink: 0;
+    }
 
-  &__highlight-content {
-    flex: 1;
-  }
+    &-content {
+      flex: 1;
+    }
 
-  &__highlight-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.125rem;
-    color: $white;
-    margin-bottom: 0.5rem;
-  }
+    &-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: $white;
+      margin-bottom: 0.5rem;
+    }
 
-  &__highlight-description {
-    font-family: 'Inter', sans-serif;
-    color: #9ca3af;
-    line-height: 1.6;
-  }
-
-  &__highlights-image {
-    img {
-      border-radius: 1rem;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      width: 100%;
-      height: auto;
+    &-description {
+      font-family: 'Inter', sans-serif;
+      color: #9ca3af;
+      line-height: 1.6;
     }
   }
 }

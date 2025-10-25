@@ -3,12 +3,13 @@
   border-top: 1px solid rgba($red-primary, 0.2);
   padding: 3rem 1rem;
 
-  &__container {
+  &-container {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  &__content {
+  // ============= Content 그룹 =============
+  &-content {
     display: grid;
     gap: 2rem;
     margin-bottom: 2rem;
@@ -19,13 +20,14 @@
     }
   }
 
-  &__brand {
+  // ============= Brand 그룹 =============
+  &-brand {
     @include mobile {
       grid-column: span 2;
     }
   }
 
-  &__logo {
+  &-logo {
     margin-bottom: 1.5rem;
     display: inline-block;
 
@@ -33,22 +35,12 @@
       height: 3rem;
       width: auto;
       object-fit: contain;
-      // 방법 1: 흰색으로 변환 (현재 적용)
       filter: brightness(0) invert(1);
       opacity: 0.9;
-
-      // 방법 2: 발광 효과 (필요시 위 filter 주석처리하고 사용)
-      // filter: drop-shadow(0 0 8px rgba($white, 0.8))
-      //         drop-shadow(0 0 20px rgba($red-primary, 0.6));
-
-      // 방법 3: 배경 추가 (필요시 사용)
-      // background: rgba($white, 0.1);
-      // padding: 0.5rem;
-      // border-radius: 0.375rem;
     }
   }
 
-  &__description {
+  &-description {
     font-family: "Inter", sans-serif;
     color: #9ca3af;
     margin-bottom: 1rem;
@@ -56,52 +48,51 @@
     line-height: 1.6;
   }
 
-  &__social {
+  // ============= Social 그룹 =============
+  &-social {
     display: flex;
     gap: 1rem;
-  }
 
-  &__social-link {
-    width: 2.5rem;
-    height: 2.5rem;
-    background: rgba($red-primary, 0.2);
-    border: 1px solid rgba($red-primary, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: $transition;
-    text-decoration: none;
+    &-link {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba($red-primary, 0.2);
+      border: 1px solid rgba($red-primary, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition;
+      text-decoration: none;
 
-    &:hover {
-      background: $red-primary;
-      border-color: $red-primary;
+      &:hover {
+        background: $red-primary;
+        border-color: $red-primary;
 
-      .footer__social-icon {
-        color: $white;
+        .footer-social-icon {
+          color: $white;
+        }
       }
+    }
+
+    &-icon {
+      color: $red-primary;
+      transition: $transition;
     }
   }
 
-  &__social-icon {
-    color: $red-primary;
-    transition: $transition;
-  }
+  // ============= Links & Info 그룹 =============
 
-  &__links,
-  &__event-info {
-    // Layout handled by grid
-  }
-
-  &__section-title {
+  &-links-title,
+  &-info-title {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     color: $white;
     margin-bottom: 1rem;
   }
 
-  &__link-list,
-  &__info-list {
+  &-links-list,
+  &-info-list {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -110,11 +101,7 @@
     margin: 0;
   }
 
-  &__link-item {
-    // List item styles
-  }
-
-  &__link {
+  &-link {
     font-family: "Inter", sans-serif;
     color: #9ca3af;
     background: none;
@@ -129,18 +116,19 @@
     }
   }
 
-  &__info-item {
+  &-info-item {
     font-family: "Inter", sans-serif;
     color: #9ca3af;
   }
 
-  &__bottom {
+  // ============= Bottom 그룹 =============
+  &-bottom {
     border-top: 1px solid rgba($red-primary, 0.2);
     padding-top: 2rem;
     text-align: center;
   }
 
-  &__copyright {
+  &-copyright {
     font-family: "Inter", sans-serif;
     color: #6b7280;
   }

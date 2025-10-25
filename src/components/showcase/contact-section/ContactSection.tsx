@@ -65,32 +65,32 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-section__container">
-        <div className="contact-section__header">
-          <h2 className="contact-section__title">
-            <span className="contact-section__title-highlight">CONTACT</span> US
+      <div className="contact-section-container">
+        <div className="contact-section-header">
+          <h2 className="contact-section-title">
+            <span className="contact-section-title-highlight">CONTACT</span> US
           </h2>
-          <p className="contact-section__description">
+          <p className="contact-section-description">
             쇼케이스에 대한 문의사항이나 예매 관련 정보가 필요하시면 언제든지
             연락주세요.
           </p>
         </div>
 
-        <div className="contact-section__content">
-          <div className="contact-section__info">
-            <div className="contact-section__contact-info">
-              <h3 className="contact-section__info-title">연락처 정보</h3>
-              <div className="contact-section__info-list">
+        <div className="contact-section-content">
+          <div className="contact-section-info">
+            <div className="contact-section-contact-info">
+              <h3 className="contact-section-info-title">연락처 정보</h3>
+              <div className="contact-section-info-list">
                 {contactInfo.map((info) => (
-                  <div key={info.title} className="contact-section__info-item">
-                    <div className="contact-section__info-icon">
+                  <div key={info.title} className="contact-section-info-item">
+                    <div className="contact-section-info-icon">
                       <info.icon size={20} />
                     </div>
-                    <div className="contact-section__info-content">
-                      <h4 className="contact-section__info-label">
+                    <div className="contact-section-info-content">
+                      <h4 className="contact-section-info-label">
                         {info.title}
                       </h4>
-                      <p className="contact-section__info-value">
+                      <p className="contact-section-info-value">
                         {info.value}
                       </p>
                     </div>
@@ -100,14 +100,14 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="contact-section__form">
-            <h3 className="contact-section__form-title">문의하기</h3>
+          <div className="contact-section-form">
+            <h3 className="contact-section-form-title">문의하기</h3>
             <form
               onSubmit={handleSubmit}
-              className="contact-section__form-content"
+              className="contact-section-form-content"
             >
-              <div className="contact-section__field">
-                <label className="contact-section__label">이름</label>
+              <div className="contact-section-field">
+                <label className="contact-section-label">이름</label>
                 <input
                   type="text"
                   value={contactForm.name}
@@ -115,11 +115,11 @@ export default function ContactSection() {
                     dispatch(updateContactForm({ name: e.target.value }))
                   }
                   placeholder="성함을 입력해주세요"
-                  className="contact-section__input"
+                  className="contact-section-input"
                 />
               </div>
-              <div className="contact-section__field">
-                <label className="contact-section__label">이메일</label>
+              <div className="contact-section-field">
+                <label className="contact-section-label">이메일</label>
                 <input
                   type="email"
                   value={contactForm.email}
@@ -127,25 +127,25 @@ export default function ContactSection() {
                     dispatch(updateContactForm({ email: e.target.value }))
                   }
                   placeholder="이메일 주소를 입력해주세요"
-                  className="contact-section__input"
+                  className="contact-section-input"
                 />
               </div>
-              <div className="contact-section__field">
-                <label className="contact-section__label">문의 유형</label>
+              <div className="contact-section-field">
+                <label className="contact-section-label">문의 유형</label>
                 <select
                   value={contactForm.type}
                   onChange={(e) =>
                     dispatch(updateContactForm({ type: e.target.value }))
                   }
-                  className="contact-section__select"
+                  className="contact-section-select"
                 >
                   <option value="">선택해주세요</option>
                   <option value="venue">공연장 문의</option>
                   <option value="general">일반 문의</option>
                 </select>
               </div>
-              <div className="contact-section__field">
-                <label className="contact-section__label">메시지</label>
+              <div className="contact-section-field">
+                <label className="contact-section-label">메시지</label>
                 <textarea
                   rows={4}
                   value={contactForm.message}
@@ -153,20 +153,20 @@ export default function ContactSection() {
                     dispatch(updateContactForm({ message: e.target.value }))
                   }
                   placeholder="문의하실 내용을 입력해주세요"
-                  className="contact-section__textarea"
+                  className="contact-section-textarea"
                 />
               </div>
               {contactSubmitError && (
-                <div className="contact-section__error">
+                <div className="contact-section-error">
                   {contactSubmitError}
                 </div>
               )}
               <button
                 type="submit"
                 disabled={isSubmittingContact}
-                className="contact-section__submit"
+                className="contact-section-submit"
               >
-                <Send className="contact-section__submit-icon" size={16} />
+                <Send className="contact-section-submit-icon" size={16} />
                 {isSubmittingContact ? '전송 중...' : '문의 보내기'}
               </button>
             </form>

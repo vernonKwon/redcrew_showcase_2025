@@ -2,12 +2,12 @@
   padding: 5rem 1rem;
   background: $dark-bg-secondary;
 
-  &__container {
+  &-container {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  &__section {
+  &-section {
     margin-bottom: 6rem;
 
     &:last-child {
@@ -15,12 +15,13 @@
     }
   }
 
-  &__header {
+  // ============= Header 그룹 =============
+  &-header {
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  &__title {
+  &-title {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -38,13 +39,13 @@
     @include desktop {
       font-size: 3rem;
     }
+
+    &-highlight {
+      color: $red-primary;
+    }
   }
 
-  &__title-highlight {
-    color: $red-primary;
-  }
-
-  &__description {
+  &-description {
     font-family: "Inter", sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
@@ -60,7 +61,8 @@
     }
   }
 
-  &__grid {
+  // ============= Grid 그룹 =============
+  &-grid {
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
@@ -78,7 +80,8 @@
     }
   }
 
-  &__card {
+  // ============= Card 그룹 =============
+  &-card {
     background: $dark-bg;
     border: 1px solid rgba($red-primary, 0.3);
     border-radius: 1rem;
@@ -89,13 +92,13 @@
       border-color: rgba($red-primary, 0.6);
       transform: scale(1.05);
 
-      .guest-teams__image img {
+      .guest-teams-image img {
         transform: scale(1.1);
       }
     }
   }
 
-  &__image {
+  &-image {
     overflow: hidden;
 
     img {
@@ -106,14 +109,14 @@
     }
   }
 
-  &__content {
+  &-content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     min-height: 170px;
   }
 
-  &__name {
+  &-name {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
@@ -121,46 +124,49 @@
     margin-bottom: 0.5rem;
   }
 
-  &__style {
+  &-style {
     font-family: "Inter", sans-serif;
     color: $red-primary;
     font-weight: 600;
     margin-bottom: 0.75rem;
   }
 
-  &__team-description {
-    font-family: "Inter", sans-serif;
-    color: #9ca3af;
-    font-size: 0.875rem;
-    // margin-bottom: 1rem;
-    line-height: 1.6;
-    flex: 1;
+  &-team {
+    &-description {
+      font-family: "Inter", sans-serif;
+      color: #9ca3af;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      flex: 1;
+    }
   }
 
-  &__footer {
+  // ============= Footer 그룹 =============
+  &-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
   }
 
-  &__established {
+  &-established {
     font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     color: #6b7280;
   }
 
-  &__social {
+  &-social {
     display: flex;
     gap: 0.5rem;
-  }
 
-  &__social-icon {
-    color: $red-primary;
-    cursor: pointer;
-    transition: $transition;
+    &-icon {
+      color: $red-primary;
+      cursor: pointer;
+      transition: $transition;
 
-    &:hover {
-      color: $red-secondary;
+      &:hover {
+        color: $red-secondary;
+      }
     }
   }
 }

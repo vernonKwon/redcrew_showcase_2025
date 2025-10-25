@@ -2,17 +2,18 @@
   padding: 5rem 1rem;
   position: relative;
 
-  &__container {
+  &-container {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  &__header {
+  // ============= Header 그룹 =============
+  &-header {
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  &__title {
+  &-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -30,13 +31,13 @@
     @include desktop {
       font-size: 3rem;
     }
+
+    &-highlight {
+      color: $red-primary;
+    }
   }
 
-  &__title-highlight {
-    color: $red-primary;
-  }
-
-  &__description {
+  &-description {
     font-family: 'Inter', sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
@@ -53,7 +54,8 @@
     }
   }
 
-  &__content {
+  // ============= Content 그룹 =============
+  &-content {
     display: grid;
     gap: 3rem;
     align-items: center;
@@ -63,7 +65,7 @@
     }
   }
 
-  &__image {
+  &-image {
     order: 2;
 
     @include tablet {
@@ -78,7 +80,8 @@
     }
   }
 
-  &__achievements {
+  // ============= Achievements 그룹 =============
+  &-achievements {
     order: 1;
     display: flex;
     flex-direction: column;
@@ -89,39 +92,39 @@
     }
   }
 
-  &__achievement {
+  &-achievement {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-  }
 
-  &__achievement-icon {
-    width: 3rem;
-    height: 3rem;
-    background: $red-primary;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: $white;
-  }
+    &-icon {
+      width: 3rem;
+      height: 3rem;
+      background: $red-primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: $white;
+    }
 
-  &__achievement-content {
-    flex: 1;
-  }
+    &-content {
+      flex: 1;
+    }
 
-  &__achievement-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: $red-primary;
-    margin-bottom: 0.5rem;
-  }
+    &-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $red-primary;
+      margin-bottom: 0.5rem;
+    }
 
-  &__achievement-description {
-    font-family: 'Inter', sans-serif;
-    color: #d1d5db;
-    line-height: 1.6;
+    &-description {
+      font-family: 'Inter', sans-serif;
+      color: #d1d5db;
+      line-height: 1.6;
+    }
   }
 }

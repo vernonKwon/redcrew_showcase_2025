@@ -51,10 +51,10 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__content">
-          <div className="footer__brand">
-            <div className="footer__logo">
+      <div className="footer-container">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <div className="footer-logo">
               <Image
                 src={LogoImage}
                 alt="REWIND - RED CREW 10th Anniversary Showcase"
@@ -62,19 +62,19 @@ export default function Footer() {
                 height={40}
               />
             </div>
-            <p className="footer__description">
+            <p className="footer-description">
               2015년부터 2024년까지, 10년간 달려온 레드크루의 마지막 무대를
               함께해주세요.
             </p>
-            <div className="footer__social">
+            <div className="footer-social">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="footer__social-link"
+                  className="footer-social-link"
                 >
                   <social.icon
-                    className={`footer__social-icon ${social.className}`}
+                    className={`footer-social-icon ${social.className}`}
                     size={16}
                   />
                 </a>
@@ -82,14 +82,14 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer__links">
-            <h4 className="footer__section-title">바로가기</h4>
-            <ul className="footer__link-list">
+          <div className="footer-links">
+            <h4 className="footer-section-title">바로가기</h4>
+            <ul className="footer-link-list">
               {quickLinks.map((link) => (
-                <li key={link.href} className="footer__link-item">
+                <li key={link.href} className="footer-link-item">
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="footer__link"
+                    className="footer-link"
                   >
                     {link.label}
                   </button>
@@ -98,11 +98,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer__event-info">
-            <h4 className="footer__section-title">공연 정보</h4>
-            <ul className="footer__info-list">
+          <div className="footer-event-info">
+            <h4 className="footer-section-title">공연 정보</h4>
+            <ul className="footer-info-list">
               {eventInfo.map((info, index) => (
-                <li key={index} className="footer__info-item">
+                <li key={index} className="footer-info-item">
                   {info}
                 </li>
               ))}
@@ -110,8 +110,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer__bottom">
-          <p className="footer__copyright">
+        <div className="footer-bottom">
+          <p className="footer-copyright">
             © {currentYear} RED CREW. All rights reserved. | 10 Years of
             Passion, One Final Stage.
           </p>

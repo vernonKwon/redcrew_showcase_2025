@@ -109,32 +109,32 @@ export default function ShowcaseSection() {
 
   return (
     <section id="showcase" className="showcase-section">
-      <div className="showcase-section__container">
-        <div className="showcase-section__header">
-          <h2 className="showcase-section__title">
-            <span className="showcase-section__title-highlight">FINAL</span>{' '}
+      <div className="showcase-section-container">
+        <div className="showcase-section-header">
+          <h2 className="showcase-section-title">
+            <span className="showcase-section-title-highlight">FINAL</span>{' '}
             SHOWCASE
           </h2>
-          <p className="showcase-section__description">
+          <p className="showcase-section-description">
             레드크루의 마지막 무대를 위해 준비된 특별한 공연 정보를 확인하세요.
           </p>
         </div>
 
-        <div className="showcase-section__details">
+        <div className="showcase-section-details">
           {eventDetails.map((detail) => {
             const cardContent = (
-              <div className="showcase-section__detail-card">
-                <div className="showcase-section__detail-icon">
+              <div className="showcase-section-detail-card">
+                <div className="showcase-section-detail-icon">
                   <detail.icon size={24} />
                 </div>
-                <h3 className="showcase-section__detail-title">
+                <h3 className="showcase-section-detail-title">
                   {detail.title}
                 </h3>
-                <div className="showcase-section__detail-content">
-                  <p className="showcase-section__detail-primary">
+                <div className="showcase-section-detail-content">
+                  <p className="showcase-section-detail-primary">
                     {detail.primary}
                   </p>
-                  <p className="showcase-section__detail-secondary">
+                  <p className="showcase-section-detail-secondary">
                     {detail.secondary}
                   </p>
                 </div>
@@ -157,23 +157,23 @@ export default function ShowcaseSection() {
           })}
         </div>
 
-        <div className="showcase-section__highlights">
-          <div className="showcase-section__highlights-content">
-            <h3 className="showcase-section__highlights-title">
+        <div className="showcase-section-highlights">
+          <div className="showcase-section-highlights-content">
+            <h3 className="showcase-section-highlights-title">
               공연 하이라이트
             </h3>
-            <div className="showcase-section__highlights-list">
+            <div className="showcase-section-highlights-list">
               {highlights.map((highlight) => (
                 <div
                   key={highlight.title}
-                  className="showcase-section__highlight"
+                  className="showcase-section-highlight"
                 >
-                  <div className="showcase-section__highlight-dot"></div>
-                  <div className="showcase-section__highlight-content">
-                    <h4 className="showcase-section__highlight-title">
+                  <div className="showcase-section-highlight-dot"></div>
+                  <div className="showcase-section-highlight-content">
+                    <h4 className="showcase-section-highlight-title">
                       {highlight.title}
                     </h4>
-                    <p className="showcase-section__highlight-description">
+                    <p className="showcase-section-highlight-description">
                       {highlight.description}
                     </p>
                   </div>
@@ -182,7 +182,7 @@ export default function ShowcaseSection() {
             </div>
           </div>
 
-          <div className="showcase-section__highlights-image">
+          <div className="showcase-section-highlights-image">
             <img
               src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
               alt="Celebration event with stage lighting and crowd"
