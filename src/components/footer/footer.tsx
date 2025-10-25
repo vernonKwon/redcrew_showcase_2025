@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
 
       <div className="copyright">
-        <p>&copy; 2024 OFFICELAB. All rights reserved.</p>
+        <p>&copy; 2025 OFFICELAB. All rights reserved.</p>
         <div className="payment-icons">
           <img src="https://via.placeholder.com/30x20?text=Visa" alt="Visa" />
           <img

@@ -68,7 +68,7 @@ export default function Footer() {
               />
             </div>
             <p className="footer-description">
-              2015년부터 2024년까지, 10년간 달려온 레드크루의 마지막 무대를
+              2015년부터 2025년까지, 10년간 달려온 레드크루의 마지막 무대를
               함께해주세요.
             </p>
             <div className="footer-social">
