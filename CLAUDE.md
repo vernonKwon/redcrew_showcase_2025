@@ -99,8 +99,9 @@ yarn analyze
 
 2. **className 적용**:
    - CSS Modules 방식이 아닌 일반 className 사용
-   - BEM 네이밍 컨벤션: `component__element--modifier`
-   - 예시: `className="hero-section__title"`, `className="navigation__menu-item"`
+   - BEM 네이밍 컨벤션: `component-element--modifier` (하이픈 기반)
+   - 예시: `className="hero-section-title"`, `className="navigation-menu-item--active"`
+   - **주의**: 언더스코어(`__`)가 아닌 하이픈(`-`)을 사용하고, modifier만 `--`로 구분
 
 3. **변수 및 믹신**:
    - `_variables.scss`: 색상, 폰트, 브레이크포인트 등
@@ -151,7 +152,7 @@ yarn analyze
 - **새로운 컴포넌트 SCSS 추가 시**: `globals.scss`에 import 추가 필요
 - **변수 사용**: `$red-primary`, `$dark-bg`, `$white` 등 기존 변수 활용
 - **반응형**: `@include mobile`, `@include tablet`, `@include desktop` 믹신 사용
-- **BEM 네이밍**: `component__element--modifier` 방식 준수
+- **BEM 네이밍**: `component-element--modifier` 방식 준수 (하이픈 기반, 언더스코어 사용 금지)
 
 ### TypeScript 타입 정의
 - **Lucide 아이콘**: `React.ComponentType<LucideProps>` 사용
