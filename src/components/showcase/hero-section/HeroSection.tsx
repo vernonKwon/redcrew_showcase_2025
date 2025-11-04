@@ -23,7 +23,7 @@ export default function HeroSection() {
   useEffect(() => {
     // 클라이언트 사이드에서만 실행되도록 마운트 상태 설정
     setIsMounted(true)
-    
+
     const updateCountdown = () => {
       const timeData = getTimeUntilEvent()
       setTimeLeft(timeData)
@@ -36,7 +36,7 @@ export default function HeroSection() {
   }, [])
 
   const handleReservation = () => {
-    alert('티켓 예매 시스템으로 이동합니다.')
+    window.open('https://aq.gy/f/CsqJl', '_blank', 'noopener,noreferrer')
   }
 
   const handleTrailer = () => {
@@ -57,21 +57,24 @@ export default function HeroSection() {
       <div className="hero-section-content">
         <div className="hero-section-title">
           <h1 className="hero-section-main-title">
-            <span className="hero-section-gradient-text">
-              RED CREW
-            </span>
+            <span className="hero-section-gradient-text">RED CREW</span>
           </h1>
-          <div className="hero-section-subtitle">댄서들의 축제, 10년간의 활동 종료</div>
+          <div className="hero-section-subtitle">
+            청춘 그 자체였던 10년간의 활동
+          </div>
           <div className="hero-section-description">
-            10년의 열정, 하나의 무대.
-            <br />
-            레드크루의 대단원의 막을 함께해주세요.
+            10년의 우여곡절 많았던 여정, 그리고 마지막 쇼케이스
+            <br />그 끝을 함께 장식해주세요.
           </div>
         </div>
 
         <div className="hero-section-countdown">
           <div className="hero-section-countdown-label">
-            <span>{isMounted && timeLeft.isEventPassed ? 'EVENT ENDED' : 'D-DAY COUNTDOWN'}</span>
+            <span>
+              {isMounted && timeLeft.isEventPassed
+                ? 'EVENT ENDED'
+                : 'D-DAY COUNTDOWN'}
+            </span>
           </div>
           {isMounted && timeLeft.isEventPassed ? (
             <div className="hero-section-event-ended">
@@ -89,7 +92,9 @@ export default function HeroSection() {
                   <div className="hero-section-countdown-value">
                     {String(unit.value).padStart(2, '0')}
                   </div>
-                  <div className="hero-section-countdown-unit">{unit.label}</div>
+                  <div className="hero-section-countdown-unit">
+                    {unit.label}
+                  </div>
                 </div>
               ))}
             </div>

@@ -6,6 +6,7 @@ interface EventDetail {
   title: string
   primary: string
   secondary: string
+  tertiary?: string
   url: string
 }
 
@@ -70,6 +71,7 @@ export default function ShowcaseSection() {
       title: '일정',
       primary: '2025년 12월 14일',
       secondary: '오후 2:00 - 6:00',
+      tertiary: '클릭하여 구글 캘린더/iOS 캘린더에 추가',
       url: '',
     },
     {
@@ -77,6 +79,7 @@ export default function ShowcaseSection() {
       title: '장소',
       primary: '중랑구민회관 대공연장',
       secondary: '서울특별시 중랑구 · 약 500석 규모',
+      tertiary: '지하철 7호선 용마산역 1번 출구 도보 5분',
       url: 'https://naver.me/xBwKuRs6',
     },
     {
@@ -84,6 +87,7 @@ export default function ShowcaseSection() {
       title: '티켓',
       primary: '10,000원',
       secondary: '전석 지정석',
+      tertiary: '카메라석 별도 운영 / 공식촬영 방해 시 퇴장 조치',
       url: 'https://aq.gy/f/CsqJl',
     },
   ]
@@ -137,6 +141,11 @@ export default function ShowcaseSection() {
                   <p className="showcase-section-detail-secondary">
                     {detail.secondary}
                   </p>
+                  {detail.tertiary && (
+                    <p className="showcase-section-detail-tertiary">
+                      {detail.tertiary}
+                    </p>
+                  )}
                 </div>
               </div>
             )

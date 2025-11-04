@@ -303,9 +303,6 @@ export default function VoteSection() {
                       >
                         <div className="vote-section-option-image">
                           <img src={option.imageUrl} alt={option.title} />
-                          <div className="vote-section-option-year">
-                            {option.style}
-                          </div>
                         </div>
 
                         <div className="vote-section-option-content">

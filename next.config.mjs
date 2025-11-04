@@ -11,6 +11,14 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig = {
   reactStrictMode: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
     prependData: `

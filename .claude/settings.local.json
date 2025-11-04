@@ -7,7 +7,10 @@
       "Bash(git commit:*)",
       "Bash(yarn dev)",
       "Bash(yarn build)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(for file in /Users/gwon-ocheol/Desktop/redcrew/RedCrewShowcase/src/styles/components/showcase/*.scss)",
+      "Bash(do sed -i '' 's/&__/\\&-/g' \"$file\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

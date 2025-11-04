@@ -9,7 +9,7 @@ export const CREDENTIALS = {
 
 // JWT 시크릿 키 (환경변수 또는 기본값)
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'redcrew-showcase-secret-key-2025'
+  process.env.JWT_SECRET || 'redcrew-showcase-secret-key-2025',
 )
 
 // 쿠키 이름
@@ -42,7 +42,9 @@ export async function generateToken(username: string): Promise<string> {
 /**
  * JWT 토큰 검증
  */
-export async function verifyToken(token: string): Promise<{ username: string } | null> {
+export async function verifyToken(
+  token: string,
+): Promise<{ username: string } | null> {
   try {
     const { payload } = await jwtVerify(token, JWT_SECRET)
     return payload as { username: string }
@@ -59,7 +61,7 @@ export function setAuthCookie(res: NextApiResponse, token: string) {
     'Set-Cookie',
     `${AUTH_COOKIE_NAME}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${TOKEN_EXPIRY}${
       process.env.NODE_ENV === 'production' ? '; Secure' : ''
-    }`
+    }`,
   )
 }
 
@@ -69,13 +71,16 @@ export function setAuthCookie(res: NextApiResponse, token: string) {
 export function clearAuthCookie(res: NextApiResponse) {
   res.setHeader(
     'Set-Cookie',
-    `${AUTH_COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0`
+    `${AUTH_COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0`,
   )
 }
 
 /**
  * 사용자 인증 검증
  */
-export function validateCredentials(username: string, password: string): boolean {
+export function validateCredentials(
+  username: string,
+  password: string,
+): boolean {
   return username === CREDENTIALS.username && password === CREDENTIALS.password
 }

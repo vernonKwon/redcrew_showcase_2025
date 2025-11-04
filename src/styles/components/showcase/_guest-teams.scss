@@ -13,6 +13,32 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    // GUEST STAGE 가로스크롤 wrapper
+    &--guest-scroll {
+      @media (min-width: $mobile) {
+        position: relative;
+
+        // 오른쪽 스크롤 힌트 그라디언트 (고정)
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 120px;
+          background: linear-gradient(
+            to right,
+            rgba($dark-bg-secondary, 0),
+            rgba($dark-bg-secondary, 0.95)
+          );
+          pointer-events: none;
+          z-index: 1;
+          opacity: var(--gradient-opacity, 1);
+          transition: opacity 0.15s ease;
+        }
+      }
+    }
   }
 
   // ============= Header 그룹 =============
@@ -74,8 +100,46 @@
     }
 
     &--guest {
-      @include desktop {
-        grid-template-columns: repeat(4, 1fr);
+      // 모바일: 세로 그리드 유지
+      grid-template-columns: 1fr;
+
+      // 태블릿/데스크톱: 가로스크롤 (768px 이상)
+      @media (min-width: $mobile) {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        padding-bottom: 1rem;
+
+        // 스크롤바 스타일링
+        &::-webkit-scrollbar {
+          height: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: rgba($dark-bg, 0.5);
+          border-radius: 5px;
+          margin-top: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba($red-primary, 0.6);
+          border-radius: 5px;
+          border: 2px solid rgba($dark-bg, 0.5);
+
+          &:hover {
+            background: rgba($red-primary, 0.8);
+          }
+
+          &:active {
+            background: $red-primary;
+          }
+        }
+
+        // 5번째 아이템 일부 노출을 위한 padding
+        padding-right: 1rem;
       }
     }
   }
@@ -96,15 +160,32 @@
         transform: scale(1.1);
       }
     }
+
+    // GUEST STAGE 가로스크롤용 고정 너비 (3:2 비율 최적화)
+    .guest-teams-grid--guest & {
+      @media (min-width: $mobile) {
+        // 태블릿: 220px 너비 = 147px 이미지 높이 (3:2)
+        min-width: 220px;
+        max-width: 220px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+      }
+
+      @include desktop {
+        // 데스크톱: 280px 너비 = 187px 이미지 높이 (3:2)
+        min-width: 280px;
+        max-width: 280px;
+      }
+    }
   }
 
   &-image {
+    position: relative;
     overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 2;
 
     img {
-      width: 100%;
-      height: 12rem;
-      object-fit: cover;
       transition: $transition;
     }
   }
@@ -114,6 +195,12 @@
     display: flex;
     flex-direction: column;
     min-height: 170px;
+
+    // GUEST STAGE 전용 스타일
+    .guest-teams-grid--guest & {
+      padding: 1rem;
+      min-height: auto;
+    }
   }
 
   &-name {
@@ -122,6 +209,12 @@
     font-size: 1.25rem;
     color: $white;
     margin-bottom: 0.5rem;
+
+    // GUEST STAGE 전용 스타일
+    .guest-teams-grid--guest & {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
   &-style {
@@ -159,14 +252,25 @@
     display: flex;
     gap: 0.5rem;
 
-    &-icon {
-      color: $red-primary;
-      cursor: pointer;
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
       transition: $transition;
 
       &:hover {
-        color: $red-secondary;
+        transform: translateY(-2px);
+
+        .guest-teams-social-icon {
+          color: $red-secondary;
+        }
       }
+    }
+
+    &-icon {
+      color: $red-primary;
+      transition: $transition;
     }
   }
 }

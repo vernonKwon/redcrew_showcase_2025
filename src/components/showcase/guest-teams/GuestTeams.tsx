@@ -1,74 +1,101 @@
+import { useEffect, useRef, useState } from 'react'
 import TeamCard from './TeamCard'
 
 interface Team {
   name: string
-  style: string
   description: string
   established: string
   image: string
+  instagram?: string
+  instagram2?: string
+  youtube?: string
 }
 
 export default function GuestTeams() {
+  const guestScrollRef = useRef<HTMLDivElement>(null)
+  const [gradientOpacity, setGradientOpacity] = useState(1)
+
+  useEffect(() => {
+    const scrollContainer = guestScrollRef.current
+    if (!scrollContainer) return
+
+    const handleScroll = () => {
+      const { scrollLeft } = scrollContainer
+      // 스크롤 0~100px 범위를 opacity 1~0으로 매핑
+      const opacity = Math.max(0, Math.min(1, 1 - scrollLeft / 100))
+      setGradientOpacity(opacity)
+    }
+
+    scrollContainer.addEventListener('scroll', handleScroll)
+    // 초기 상태 체크
+    handleScroll()
+
+    return () => scrollContainer.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const crewTeams: Team[] = [
     {
-      name: 'HIPARTY',
-      style: 'Hip-Hop',
-      description: '걸스힙합, 댄스홀, 트월킹 등으로 여성미를 강조한 댄스팀',
-      established: 'Est. 2019',
+      name: 'RED CREW',
+      description:
+        '리더가 남성이지만 타 여성 댄스팀과 견줄정도로 파격적이며, 댄서씬에서 독보적인 댄스 크루',
+      established: 'Est. 2015',
       image:
         'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      instagram: 'https://www.instagram.com/redcrew_korea',
+      instagram2: 'https://www.instagram.com/red_99_0819',
+      youtube: 'https://www.youtube.com/@레드크루',
     },
     {
       name: '4X4 CREW',
-      style: 'Urban',
-      description: '컨셉의 스펙트럼이 다양하며, 칼군무가 포인트인 K-POP 댄스팀',
+      description:
+        '컨셉의 스펙트럼이 다양하며, 칼군무가 포인트인 K-POP 댄스 크루',
       established: 'Est. 2020',
-      image:
-        'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      image: '/images/teams/4x4_2.png',
+      instagram: 'https://www.instagram.com/4x4crew_4x4studio/',
+      youtube: 'https://www.youtube.com/@4x4crew_public',
     },
     {
       name: 'ME_MEMORIES CREW',
-      style: 'Contemporary',
-      description: '2세대~5세대 K-POP을 자유롭게 넘나드는 댄스팀',
+      description: '2세대~5세대 K-POP을 자유롭게 넘나드는 댄스 크루',
       established: 'Est. 2021',
-      image:
-        'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      image: '/images/teams/ME_MEMORIES.png',
+      instagram: 'https://www.instagram.com/me_memoriescrew/',
+      youtube: 'https://www.youtube.com/@ME_MEMORIESCREW_crew',
     },
   ]
 
   const guestTeams: Team[] = [
     {
-      name: 'PRE-BXXCH',
-      style: 'Hip-Hop / Urban',
-      description:
-        '왁킹, 올장르, 걸스힙합, 걸리쉬 각 장르별 1군들이 모여 결성한 유닛',
-      established: 'Est. 2023',
-      image:
-        'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      name: 'PENTAGON',
+      description: '',
+      established: '',
+      image: '/images/teams/guest_pentagon.png',
     },
     {
-      name: 'PENTAGON',
-      style: 'Contemporary / Jazz',
-      description: 'K-POP 남성댄스팀',
-      established: 'Est. 2013',
+      name: 'DROP',
+      description: '',
+      established: '',
       image:
         'https://images.unsplash.com/photo-1445384763658-0400939829cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
     },
     {
-      name: 'ONESHOT CREW',
-      style: 'Breaking / Popping',
-      description: '소속멤버 약 100명, 전국 대학생들의 연합 무용크루',
-      established: 'Est. 2023',
+      name: 'PRE-BXXCH',
+      description: '',
+      established: '',
       image:
-        'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+        'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
     },
     {
       name: 'Art company SOUL',
-      style: 'Contemporary / Artistic',
-      description: 'K-POP 여성댄스팀',
-      established: 'Est. 2020',
-      image:
-        'https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      description: '',
+      established: '',
+      image: '/images/teams/guest_art_company_soul.png',
+    },
+    {
+      name: 'ONESHOT CREW',
+      description: '',
+      established: '',
+      image: '/images/teams/guest_one_shot.png',
     },
   ]
 
@@ -94,13 +121,21 @@ export default function GuestTeams() {
                 description={team.description}
                 established={team.established}
                 image={team.image}
+                instagram={team.instagram}
+                instagram2={team.instagram2}
+                youtube={team.youtube}
               />
             ))}
           </div>
         </div>
 
         {/* GUEST STAGE */}
-        <div className="guest-teams-section">
+        <div
+          className="guest-teams-section guest-teams-section--guest-scroll"
+          style={
+            { '--gradient-opacity': gradientOpacity } as React.CSSProperties
+          }
+        >
           <div className="guest-teams-header">
             <h2 className="guest-teams-title">
               <span className="guest-teams-title-highlight">GUEST</span> STAGE
@@ -110,7 +145,10 @@ export default function GuestTeams() {
             </p>
           </div>
 
-          <div className="guest-teams-grid guest-teams-grid--guest">
+          <div
+            ref={guestScrollRef}
+            className="guest-teams-grid guest-teams-grid--guest"
+          >
             {guestTeams.map((team) => (
               <TeamCard
                 key={team.name}
@@ -118,6 +156,9 @@ export default function GuestTeams() {
                 description={team.description}
                 established={team.established}
                 image={team.image}
+                instagram={team.instagram}
+                instagram2={team.instagram2}
+                youtube={team.youtube}
               />
             ))}
           </div>
