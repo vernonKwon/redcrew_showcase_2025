@@ -12,7 +12,7 @@ export default function HistoryTimeline() {
       year: '2015',
       title: '레드크루 결성',
       description:
-        "열정, 경고, 개성을 표현할 때 제일 눈에 띄는 컬러인 '레드'처럼 각자 매력이 있는 멤버들과 버스킹 활동하는 팀을 제작.",
+        "열정, 경고, 개성을 표현할 때 제일 눈에 띄는 컬러인 '레드'처럼 각자 매력이 있는 멤버들과 버스킹 활동하는 팀을 제작",
       side: 'left',
     },
     {
@@ -40,14 +40,14 @@ export default function HistoryTimeline() {
       year: '2023',
       title: '전성기',
       description:
-        '마포구청, 서초구청, 초/중/고 등 공공기관에서 러브콜 쇄도, 유튜브/버스킹/찬조 등 다방면에서 화려하게 활동하였음.',
+        '마포구청, 서초구청, 초/중/고 등 공공기관에서 러브콜 쇄도, 유튜브/버스킹/찬조 등 다방면에서 화려하게 활동하였음',
       side: 'left',
     },
     {
       year: '2025',
       title: 'Finale',
       description:
-        '10년간의 여정을 마무리하는 해체 전 마지막 무대. 모든 것을 쏟아낼 마지막 공연.',
+        '10년간의 여정을 마무리하는 해체 전 마지막 무대. 모든 것을 쏟아낼 마지막 공연',
       side: 'right',
       special: true,
     },
@@ -64,8 +64,9 @@ export default function HistoryTimeline() {
             여정
           </h2>
           <p className="history-timeline-description">
-            가장 강렬하고 시선을 끄는 컬러 &apos;레드&apos;처럼, 각기 다른
-            개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스
+            가장 강렬하고 시선을 끄는 컬러 &apos;레드&apos;처럼
+            <br />
+            각기 다른 개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스
             크루입니다.
           </p>
         </div>
