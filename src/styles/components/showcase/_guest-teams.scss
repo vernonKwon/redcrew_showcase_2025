@@ -113,30 +113,16 @@
         scroll-snap-type: x proximity;
         padding-bottom: 1rem;
 
-        // 스크롤바 스타일링
+        // 스크롤바 숨기기
         &::-webkit-scrollbar {
-          height: 10px;
+          display: none;
         }
 
-        &::-webkit-scrollbar-track {
-          background: rgba($dark-bg, 0.5);
-          border-radius: 5px;
-          margin-top: 0.5rem;
-        }
+        // Firefox용 스크롤바 숨기기
+        scrollbar-width: none;
 
-        &::-webkit-scrollbar-thumb {
-          background: rgba($red-primary, 0.6);
-          border-radius: 5px;
-          border: 2px solid rgba($dark-bg, 0.5);
-
-          &:hover {
-            background: rgba($red-primary, 0.8);
-          }
-
-          &:active {
-            background: $red-primary;
-          }
-        }
+        // IE/Edge (구버전)용 스크롤바 숨기기
+        -ms-overflow-style: none;
 
         // 5번째 아이템 일부 노출을 위한 padding
         padding-right: 1rem;
