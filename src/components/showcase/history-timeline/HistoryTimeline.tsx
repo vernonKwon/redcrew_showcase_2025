@@ -12,41 +12,42 @@ export default function HistoryTimeline() {
       year: '2015',
       title: '레드크루 결성',
       description:
-        '춤에 대한 열정 하나로 모인 5명의 멤버들. 작은 연습실에서 시작된 우리의 꿈',
+        "열정, 경고, 개성을 표현할 때 제일 눈에 띄는 컬러인 '레드'처럼 각자 매력이 있는 멤버들과 버스킹 활동하는 팀을 제작.",
       side: 'left',
     },
     {
       year: '2016',
-      title: '첫 대회 우승',
+      title: '찬조공연, 외부활동',
       description:
-        '지역 댄스 대회에서 거둔 첫 승리. 우리가 할 수 있다는 자신감을 얻은 순간',
+        '중학교, 고등학교 등 수도권 전지역에서 행사 및 공연 활동, 새로운 도전의 시작점',
       side: 'right',
     },
     {
-      year: '2018',
+      year: '2019',
       title: '전국구 인정',
       description:
-        '전국 댄스 페스티벌 참가 및 여러 크루들과의 협업. 네트워크 확장의 해',
+        '에버랜드, 서울시청, 교육청 등 공공기관과 대규모 페스티벌 초청 및 타 크루들과의 협업, 네트워크 확장의 해',
       side: 'left',
     },
     {
-      year: '2020',
-      title: '디지털 전환',
-      description: '온라인 플랫폼을 통한 공연과 교육. 새로운 도전의 시작점',
+      year: '2021',
+      title: '프로젝트 전환',
+      description:
+        '코로나 시기, 버스킹과 행사 등을 못하게 되었을 때 유튜브 커버댄스 촬영팀으로 전환',
       side: 'right',
     },
     {
-      year: '2022',
+      year: '2023',
       title: '전성기',
       description:
-        '국내 최대 댄스 대회 우승 및 해외 페스티벌 초청. 최고의 순간들',
+        '마포구청, 서초구청, 초/중/고 등 공공기관에서 러브콜 쇄도, 유튜브/버스킹/찬조 등 다방면에서 화려하게 활동하였음.',
       side: 'left',
     },
     {
       year: '2025',
-      title: '파이널 쇼케이스',
+      title: 'Finale',
       description:
-        '10년간의 여정을 마무리하는 특별한 무대. 모든 것을 쏟아낼 마지막 공연',
+        '10년간의 여정을 마무리하는 해체 전 마지막 무대. 모든 것을 쏟아낼 마지막 공연.',
       side: 'right',
       special: true,
     },
@@ -57,11 +58,15 @@ export default function HistoryTimeline() {
       <div className="history-timeline-container">
         <div className="history-timeline-header">
           <h2 className="history-timeline-title">
-            <span className="history-timeline-title-highlight">10년</span>의
+            <span className="history-timeline-title-highlight">RED CREW</span>의
+            이야기 그리고{' '}
+            <span className="history-timeline-subtitle-highlight">10년</span>의
             여정
           </h2>
           <p className="history-timeline-description">
-            레드크루가 걸어온 길, 그리고 함께 만들어온 추억들을 되돌아봅니다.
+            가장 강렬하고 시선을 끄는 컬러 &apos;레드&apos;처럼, 각기 다른
+            개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스
+            크루입니다.
           </p>
         </div>
 

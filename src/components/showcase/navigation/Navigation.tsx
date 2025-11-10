@@ -18,7 +18,6 @@ export default function Navigation() {
     { href: '#history', label: '10년의 여정' },
     { href: '#showcase', label: '쇼케이스' },
     { href: '#teams', label: '게스트 팀' },
-    { href: '/vote', label: '인기투표', isExternal: true },
     { href: '#contact', label: '문의' },
   ]
 

@@ -140,12 +140,9 @@
 
   // ============= Highlights 그룹 =============
   &-highlights {
-    display: grid;
-    gap: 3rem;
-    align-items: center;
-
-    @include tablet {
-      grid-template-columns: 1fr 1fr;
+    &-content {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     &-title {
@@ -153,36 +150,43 @@
       font-weight: 700;
       font-size: 1.875rem;
       color: $red-primary;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
     }
 
     &-list {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 1.5rem;
-    }
 
-    &-image {
-      img {
-        border-radius: 1rem;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        width: 100%;
-        height: auto;
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
       }
     }
   }
 
   &-highlight {
+    background: $dark-bg-secondary;
+    border: 1px solid rgba($red-primary, 0.3);
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    transition: $transition;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
 
+    &:hover {
+      border-color: rgba($red-primary, 0.6);
+      transform: translateY(-4px);
+    }
+
     &-dot {
-      width: 0.5rem;
-      height: 0.5rem;
+      width: 0.75rem;
+      height: 0.75rem;
       background: $red-primary;
       border-radius: 50%;
-      margin-top: 0.75rem;
+      margin-top: 0.5rem;
       flex-shrink: 0;
     }
 
@@ -193,15 +197,16 @@
     &-title {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       color: $white;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     &-description {
       font-family: 'Inter', sans-serif;
       color: #9ca3af;
       line-height: 1.6;
+      font-size: 0.9375rem;
     }
   }
 }

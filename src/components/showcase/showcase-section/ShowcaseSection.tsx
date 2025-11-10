@@ -94,20 +94,20 @@ export default function ShowcaseSection() {
 
   const highlights: Highlight[] = [
     {
-      title: '10년 베스트 퍼포먼스',
-      description: '역대 최고의 무대들을 재구성한 스페셜 메들리',
+      title: '시그니처 스테이지',
+      description: '각 팀의 과거/현재의 대표곡을 보여주는 무대',
     },
     {
-      title: '게스트 팀 콜라보레이션',
-      description: '전국 유명 댄스팀들과의 특별한 합동 공연',
+      title: '조커 스테이지',
+      description: '각 팀의 성격과 정반대 되는 컨셉의 무대',
     },
     {
-      title: '멤버 솔로 무대',
-      description: '각 멤버의 개성이 담긴 솔로 퍼포먼스',
+      title: '포지션 스테이지',
+      description: '리더와 멤버가 각각 무대를 준비하여 대결하는 무대',
     },
     {
-      title: '피날레 그랜드 쇼',
-      description: '모든 참가팀이 함께하는 감동의 마지막 무대',
+      title: '스페셜 스테이지',
+      description: '레드크루 쇼케이스에서만 볼 수 있는 레전드 무대',
     },
   ]
 
@@ -189,13 +189,6 @@ export default function ShowcaseSection() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="showcase-section-highlights-image">
-            <img
-              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Celebration event with stage lighting and crowd"
-            />
           </div>
         </div>
       </div>

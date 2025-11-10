@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { NextPageWithLayout } from './_app'
 import Navigation from '@/components/showcase/navigation/Navigation'
 import HeroSection from '@/components/showcase/hero-section/HeroSection'
-import AboutSection from '@/components/showcase/about-section/AboutSection'
 import HistoryTimeline from '@/components/showcase/history-timeline/HistoryTimeline'
 import ShowcaseSection from '@/components/showcase/showcase-section/ShowcaseSection'
 import GuestTeams from '@/components/showcase/guest-teams/GuestTeams'
@@ -26,7 +25,6 @@ const HomePage: NextPageWithLayout = () => {
       <div className="showcase-page">
         <Navigation />
         <HeroSection />
-        <AboutSection />
         <HistoryTimeline />
         <ShowcaseSection />
         <GuestTeams />

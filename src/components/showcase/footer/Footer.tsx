@@ -11,8 +11,8 @@ export default function Footer() {
           <Image
             src={LogoImage}
             alt="REWIND - RED CREW 10th Anniversary Showcase"
-            width={120}
-            height={32}
+            width={600}
+            height={160}
           />
         </div>
 

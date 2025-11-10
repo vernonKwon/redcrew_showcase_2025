@@ -37,10 +37,9 @@ export default function GuestTeams() {
     {
       name: 'RED CREW',
       description:
-        '리더가 남성이지만 타 여성 댄스팀과 견줄정도로 파격적이며, 댄서씬에서 독보적인 댄스 크루',
+        "가장 강렬하고 시선을 끄는 컬러 '레드'처럼, 각기 다른 개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스 크루",
       established: 'Est. 2015',
-      image:
-        'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      image: '/images/teams/redcrew.png',
       instagram: 'https://www.instagram.com/redcrew_korea',
       instagram2: 'https://www.instagram.com/red_99_0819',
       youtube: 'https://www.youtube.com/@레드크루',
@@ -75,15 +74,13 @@ export default function GuestTeams() {
       name: 'DROP',
       description: '',
       established: '',
-      image:
-        'https://images.unsplash.com/photo-1445384763658-0400939829cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      image: '/images/teams/guest_drop.png',
     },
     {
       name: 'PRE-BXXCH',
       description: '',
       established: '',
-      image:
-        'https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300',
+      image: '/images/teams/guest_pre-bxxch.png',
     },
     {
       name: 'Art company SOUL',

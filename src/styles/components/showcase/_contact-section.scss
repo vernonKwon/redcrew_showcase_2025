@@ -64,9 +64,10 @@
       gap: 2rem;
       max-width: 32rem;
 
-      @include tablet {
+      @media (min-width: 768px) {
         flex-direction: row;
         gap: 3rem;
+        max-width: 100%;
       }
     }
 
