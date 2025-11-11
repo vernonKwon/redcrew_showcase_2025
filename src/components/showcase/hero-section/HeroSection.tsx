@@ -63,7 +63,7 @@ export default function HeroSection() {
             청춘 그 자체였던 10년간의 활동
           </div>
           <div className="hero-section-description">
-            10년의 우여곡절 많았던 여정, 그리고 마지막 쇼케이스
+            우여곡절이 많았던 10년의 여정, 그리고 마지막 쇼케이스
             <br />그 끝을 함께 장식해주세요
           </div>
         </div>

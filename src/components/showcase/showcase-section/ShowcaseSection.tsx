@@ -95,11 +95,11 @@ export default function ShowcaseSection() {
   const highlights: Highlight[] = [
     {
       title: '시그니처 스테이지',
-      description: '각 팀의 과거/현재의 대표곡을 보여주는 무대',
+      description: '각 팀의 과거와 현재의 대표곡을 보여주는 무대',
     },
     {
       title: '조커 스테이지',
-      description: '각 팀의 성격과 정반대 되는 컨셉의 무대',
+      description: '각 팀의 성격과 정반대인 컨셉의 무대',
     },
     {
       title: '포지션 스테이지',
