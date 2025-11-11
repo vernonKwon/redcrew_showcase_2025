@@ -9,7 +9,7 @@ export default function LocationSection() {
             <span className="location-section-title-highlight">오시는</span> 길
           </h2>
           <p className="location-section-description">
-            중랑구민회관 대공연장으로 오시는 방법을 안내해드립니다.
+            중랑구민회관 대공연장으로 오시는 방법을 안내해드립니다
           </p>
         </div>
 

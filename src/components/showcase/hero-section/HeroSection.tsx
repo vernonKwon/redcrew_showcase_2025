@@ -64,7 +64,7 @@ export default function HeroSection() {
           </div>
           <div className="hero-section-description">
             10년의 우여곡절 많았던 여정, 그리고 마지막 쇼케이스
-            <br />그 끝을 함께 장식해주세요.
+            <br />그 끝을 함께 장식해주세요
           </div>
         </div>
 

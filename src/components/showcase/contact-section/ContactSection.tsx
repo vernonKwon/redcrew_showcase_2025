@@ -32,7 +32,7 @@ export default function ContactSection() {
           </h2>
           <p className="contact-section-description">
             쇼케이스에 대한 문의사항이나 예매 관련 정보가 필요하시면 언제든지
-            연락주세요.
+            연락주세요
           </p>
         </div>
 
@@ -44,7 +44,9 @@ export default function ContactSection() {
                 href={info.href}
                 target={info.title === '인스타그램' ? '_blank' : undefined}
                 rel={
-                  info.title === '인스타그램' ? 'noopener noreferrer' : undefined
+                  info.title === '인스타그램'
+                    ? 'noopener noreferrer'
+                    : undefined
                 }
                 className="contact-section-info-item"
               >

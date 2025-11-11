@@ -37,7 +37,7 @@ export default function AboutSection() {
           </h2>
           <p className="about-section-description">
             {
-              "가장 강렬하고 시선을 끄는 컬러 '레드'처럼, 각기 다른 개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스 크루입니다."
+              "가장 강렬하고 시선을 끄는 컬러 '레드'처럼, 각기 다른 개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스 크루입니다"
             }
           </p>
         </div>

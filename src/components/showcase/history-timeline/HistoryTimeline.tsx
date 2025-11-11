@@ -12,7 +12,7 @@ export default function HistoryTimeline() {
       year: '2015',
       title: '레드크루 결성',
       description:
-        "열정, 경고, 개성을 표현할 때 제일 눈에 띄는 컬러인 '레드'처럼 각자 매력이 있는 멤버들과 버스킹 활동하는 팀을 제작",
+        "열정, 경고, 개성을 표현할 때 제일 눈에 띄는 컬러인 '레드'처럼 각자 매력이 있는 멤버들과 버스킹 활동하는 팀을 결성",
       side: 'left',
     },
     {
@@ -67,7 +67,7 @@ export default function HistoryTimeline() {
             가장 강렬하고 시선을 끄는 컬러 &apos;레드&apos;처럼
             <br />
             각기 다른 개성과 매력을 지닌 멤버들이 모여 하나의 팀으로 빛나는 댄스
-            크루입니다.
+            크루입니다
           </p>
         </div>
 

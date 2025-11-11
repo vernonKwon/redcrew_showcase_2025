@@ -106,7 +106,7 @@ export default function GuestTeams() {
               <span className="guest-teams-title-highlight">CREW</span> STAGE
             </h2>
             <p className="guest-teams-description">
-              레드크루와 함께 무대를 만들어갈 크루들을 소개합니다.
+              레드크루와 함께 무대를 만들어갈 크루들을 소개합니다
             </p>
           </div>
 
@@ -138,7 +138,7 @@ export default function GuestTeams() {
               <span className="guest-teams-title-highlight">GUEST</span> STAGE
             </h2>
             <p className="guest-teams-description">
-              레드크루와 함께 무대를 빛낼 게스트 팀들을 소개합니다.
+              레드크루와 함께 무대를 빛낼 게스트 팀들을 소개합니다
             </p>
           </div>
 

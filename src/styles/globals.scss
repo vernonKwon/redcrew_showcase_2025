@@ -35,6 +35,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $font-color-primary;
+  // 단어 단위로 줄바꿈 (한글/영문 혼합 텍스트 최적화)
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 #__next {
