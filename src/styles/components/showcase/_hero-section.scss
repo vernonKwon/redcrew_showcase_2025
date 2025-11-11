@@ -135,6 +135,10 @@
     @include tablet {
       font-size: 1.125rem;
     }
+
+    @include desktop {
+      font-size: 0.92rem;
+    }
   }
 
   &-countdown {
