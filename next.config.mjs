@@ -1,22 +1,22 @@
 /** @type {import('next').NextConfig} */
-import withBundleAnalyzer from '@next/bundle-analyzer';
+import withBundleAnalyzer from '@next/bundle-analyzer'
 import path from 'path'
-import { fileURLToPath } from "url"; 
+import { fileURLToPath } from 'url'
 
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const bundleAnalyzer = withBundleAnalyzer({
-	enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === 'true',
 })
 
 const nextConfig = {
   reactStrictMode: false,
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
+      // {
+      //   protocol: 'https',
+      //   hostname: 'images.unsplash.com',
+      // },
     ],
   },
   sassOptions: {
@@ -24,7 +24,7 @@ const nextConfig = {
     prependData: `
       @import "@/styles/variables";
       @import "@/styles/mixins";
-    `
+    `,
   },
   transpilePackages: [
     'antd',
@@ -65,8 +65,8 @@ const nextConfig = {
     'rc-cascader',
     'rc-checkbox',
     'rc-collapse',
-    'rc-trigger'
+    'rc-trigger',
   ],
-};
+}
 
 export default bundleAnalyzer(nextConfig)
