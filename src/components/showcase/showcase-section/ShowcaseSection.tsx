@@ -8,9 +8,7 @@ import { addToCalendar } from '@/lib/calendarUtils'
 
 export default function ShowcaseSection() {
   const handleCalendarClick = () => {
-    // 768px 기준으로 모바일/데스크톱 분기
-    const isMobile = window.innerWidth < 768
-    addToCalendar(calendarEvent, isMobile)
+    addToCalendar(calendarEvent)
   }
 
   return (
