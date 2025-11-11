@@ -1,0 +1,22 @@
+{
+  "name": "RED CREW 파이널 쇼케이스",
+  "short_name": "RED CREW",
+  "description": "레드크루의 10년을 마무리하는 파이널 쇼케이스",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ff4444",
+  "background_color": "#0a0a0a",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait"
+}
