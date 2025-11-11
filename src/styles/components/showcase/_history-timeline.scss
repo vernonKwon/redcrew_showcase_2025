@@ -94,11 +94,6 @@
     bottom: 0;
     width: 0.25rem;
     background: linear-gradient(180deg, $red-primary, $red-secondary, $orange-color);
-
-    @include tablet {
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   &-events {
@@ -112,12 +107,6 @@
     position: relative;
     display: flex;
     align-items: center;
-
-    @include tablet {
-      &--right {
-        justify-content: flex-end;
-      }
-    }
 
     &--special {
       .history-timeline-card {
@@ -171,11 +160,6 @@
     justify-content: center;
     z-index: 10;
 
-    @include tablet {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
     &-inner {
       width: 0.75rem;
       height: 0.75rem;
@@ -197,19 +181,7 @@
     border-radius: 0.75rem;
     padding: 1.5rem;
     transition: $transition;
-
-    @include tablet {
-      margin-left: 0;
-      width: calc(50% - 2rem);
-
-      .history-timeline-event--right & {
-        margin-left: 2rem;
-      }
-
-      .history-timeline-event--left & {
-        margin-right: 2rem;
-      }
-    }
+    flex: 1;
 
     &:hover {
       border-color: rgba($red-primary, 0.6);
