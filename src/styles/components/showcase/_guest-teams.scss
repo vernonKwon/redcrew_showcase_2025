@@ -114,15 +114,7 @@
         padding-bottom: 1rem;
 
         // 스크롤바 숨기기
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        // Firefox용 스크롤바 숨기기
-        scrollbar-width: none;
-
-        // IE/Edge (구버전)용 스크롤바 숨기기
-        -ms-overflow-style: none;
+        @include hide-scrollbar;
 
         // 5번째 아이템 일부 노출을 위한 padding
         padding-right: 1rem;

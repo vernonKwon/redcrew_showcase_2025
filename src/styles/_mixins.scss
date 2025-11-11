@@ -29,3 +29,29 @@
   justify-content: space-between;
   align-items: center;
 }
+
+// 반응형 폰트 사이즈
+@mixin responsive-font($mobile, $tablet: null, $desktop: null) {
+  font-size: $mobile;
+
+  @if $tablet {
+    @include tablet {
+      font-size: $tablet;
+    }
+  }
+
+  @if $desktop {
+    @include desktop {
+      font-size: $desktop;
+    }
+  }
+}
+
+// 스크롤바 숨기기
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

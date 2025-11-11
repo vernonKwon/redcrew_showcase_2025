@@ -16,6 +16,17 @@ $red-secondary: #cc3333;
 $dark-bg: #0a0a0a;
 $dark-bg-secondary: #1a1a1a;
 
+// Gradients
+$gradient-red: linear-gradient(90deg, $red-primary, $red-secondary);
+$gradient-red-orange: linear-gradient(
+  90deg,
+  $red-primary,
+  $red-secondary,
+  $orange-color
+);
+$gradient-red-vertical: linear-gradient(180deg, $red-primary, $red-secondary);
+$gradient-dark: linear-gradient(180deg, $dark-bg, $dark-bg-secondary);
+
 // Spacing
 $spacing-small: 8px;
 $spacing-medium: 16px;
