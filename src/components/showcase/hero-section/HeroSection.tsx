@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Ticket, Play } from 'lucide-react'
-import { getTimeUntilEvent } from '@/lib/dayjs'
+import { getTimeUntilEvent, EventStatus } from '@/lib/dayjs'
 
 interface TimeLeft {
   days: number
   hours: number
   minutes: number
   seconds: number
-  isEventPassed: boolean
+  eventStatus: EventStatus
 }
 
 export default function HeroSection() {
@@ -16,7 +16,7 @@ export default function HeroSection() {
     hours: 0,
     minutes: 0,
     seconds: 0,
-    isEventPassed: false,
+    eventStatus: 'before',
   })
   const [isMounted, setIsMounted] = useState(false)
 
@@ -71,16 +71,15 @@ export default function HeroSection() {
         <div className="hero-section-countdown">
           <div className="hero-section-countdown-label">
             <span>
-              {isMounted && timeLeft.isEventPassed
-                ? 'EVENT ENDED'
-                : 'D-DAY COUNTDOWN'}
+              {isMounted && timeLeft.eventStatus === 'ended' && 'EVENT ENDED'}
+              {isMounted && timeLeft.eventStatus === 'ongoing' && 'NOW LIVE'}
+              {(!isMounted || timeLeft.eventStatus === 'before') &&
+                'D-DAY COUNTDOWN'}
             </span>
           </div>
-          {isMounted && timeLeft.isEventPassed ? (
-            <div className="hero-section-event-ended">
-              <p>쇼케이스가 성공적으로 종료되었습니다!</p>
-            </div>
-          ) : (
+
+          {/* 이벤트 시작 전 (14시 이전): 카운트다운 표시 */}
+          {(!isMounted || timeLeft.eventStatus === 'before') && (
             <div className="hero-section-countdown-grid">
               {[
                 { label: 'DAYS', value: isMounted ? timeLeft.days : 0 },
@@ -97,6 +96,20 @@ export default function HeroSection() {
                   </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* 이벤트 진행 중 (14시 ~ 18시): 쇼케이스를 즐기세요! */}
+          {isMounted && timeLeft.eventStatus === 'ongoing' && (
+            <div className="hero-section-event-ended">
+              <p>쇼케이스를 즐기세요!</p>
+            </div>
+          )}
+
+          {/* 이벤트 종료 후 (18시 이후): 쇼케이스가 성공적으로 종료되었습니다! */}
+          {isMounted && timeLeft.eventStatus === 'ended' && (
+            <div className="hero-section-event-ended">
+              <p>쇼케이스가 성공적으로 종료되었습니다!</p>
             </div>
           )}
         </div>

@@ -29,8 +29,14 @@ export const now = (): Dayjs => dayjsWithTimezone()
 // 특정 날짜를 한국시간으로 파싱하는 함수
 export const parseKST = (date: string): Dayjs => dayjsWithTimezone(date)
 
-// 쇼케이스 이벤트 날짜 (2025년 12월 14일 오후 2시 한국시간)
-export const SHOWCASE_EVENT_DATE = parseKST('2025-12-14 14:00:00')
+// 쇼케이스 이벤트 시작 날짜 (2025년 12월 14일 오후 2시 한국시간)
+export const SHOWCASE_EVENT_START = parseKST('2025-12-14 14:00:00')
+
+// 쇼케이스 이벤트 종료 날짜 (2025년 12월 14일 오후 6시 한국시간)
+export const SHOWCASE_EVENT_END = parseKST('2025-12-14 18:00:00')
+
+// 이벤트 상태 타입
+export type EventStatus = 'before' | 'ongoing' | 'ended'
 
 // 현재 시간과 이벤트 시간의 차이를 계산하는 함수
 export const getTimeUntilEvent = () => {
@@ -42,31 +48,45 @@ export const getTimeUntilEvent = () => {
       hours: 0,
       minutes: 0,
       seconds: 0,
-      isEventPassed: false
+      eventStatus: 'before' as EventStatus,
     }
   }
 
   const currentTime = now()
-  const difference = SHOWCASE_EVENT_DATE.diff(currentTime)
-  
-  if (difference <= 0) {
+  const differenceToStart = SHOWCASE_EVENT_START.diff(currentTime)
+  const differenceToEnd = SHOWCASE_EVENT_END.diff(currentTime)
+
+  // 이벤트 종료 후 (18시 이후)
+  if (differenceToEnd <= 0) {
     return {
       days: 0,
       hours: 0,
       minutes: 0,
       seconds: 0,
-      isEventPassed: true
+      eventStatus: 'ended' as EventStatus,
     }
   }
-  
-  const timeDuration = dayjs.duration(difference)
-  
+
+  // 이벤트 진행 중 (14시 ~ 18시)
+  if (differenceToStart <= 0 && differenceToEnd > 0) {
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      eventStatus: 'ongoing' as EventStatus,
+    }
+  }
+
+  // 이벤트 시작 전 (14시 이전)
+  const timeDuration = dayjs.duration(differenceToStart)
+
   return {
     days: Math.floor(timeDuration.asDays()),
     hours: timeDuration.hours(),
     minutes: timeDuration.minutes(),
     seconds: timeDuration.seconds(),
-    isEventPassed: false
+    eventStatus: 'before' as EventStatus,
   }
 }
 
