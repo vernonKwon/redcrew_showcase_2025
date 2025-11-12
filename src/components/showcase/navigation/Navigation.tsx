@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,6 +7,7 @@ import { navItems } from '@/constants/navigationItems'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -16,8 +17,24 @@ export default function Navigation() {
     }
   }
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node) && isOpen) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
+
   return (
-    <nav className="navigation">
+    <nav className="navigation" ref={navRef}>
       <div className="navigation-container">
         <div className="navigation-content">
           <div className="navigation-logo">
