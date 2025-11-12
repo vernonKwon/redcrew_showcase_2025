@@ -5,7 +5,7 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { href: '#about', label: '팀 소개' },
+  { href: '#d-day', label: 'd-day' },
   { href: '#history', label: '10년의 여정' },
   { href: '#showcase', label: '쇼케이스' },
   { href: '#teams', label: '게스트 팀' },

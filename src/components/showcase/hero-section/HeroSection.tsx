@@ -44,7 +44,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="hero-section">
+    <section id="d-day" className="hero-section">
       <div className="hero-section-background">
         <div className="hero-section-gradient"></div>
         <div className="hero-section-animation">
