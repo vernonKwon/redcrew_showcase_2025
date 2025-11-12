@@ -4,7 +4,9 @@ import type { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import { wrapper } from '@/redux/store'
 import type { ReactElement, ReactNode } from 'react'
+import { useEffect } from 'react'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import DefaultLayout from '@/components/layout/default-layout/DefaultLayout'
 import { ConfigProvider } from 'antd'
 
@@ -21,6 +23,23 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, ...rest }: AppPropsWithLayout) {
   const { store, props } = wrapper.useWrappedStore(rest)
   const { pageProps } = props
+  const router = useRouter()
+
+  // Google Analytics 페이지 뷰 추적
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('config', process.env.NEXT_PUBLIC_GA_ID!, {
+          page_path: url,
+        })
+      }
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   // 클라이언트 사이드에서만 로깅
   if (typeof window !== 'undefined')
