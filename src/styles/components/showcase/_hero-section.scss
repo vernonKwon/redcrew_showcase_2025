@@ -75,7 +75,7 @@
   }
 
   &-main-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -101,7 +101,7 @@
   }
 
   &-subtitle {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     color: #d1d5db;
@@ -121,7 +121,7 @@
   }
 
   &-description {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 0.875rem;
     color: #9ca3af;
     max-width: 32rem;
@@ -149,7 +149,7 @@
       margin-bottom: 1.5rem;
 
       span {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 600;
         color: $red-primary;
         font-size: 1.125rem;
@@ -208,7 +208,7 @@
     }
 
     &-value {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-weight: 700;
       font-size: 1.25rem;
       color: $red-primary;
@@ -229,7 +229,7 @@
     }
 
     &-unit {
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       font-size: 0.625rem;
       color: #9ca3af;
       width: 100%;
@@ -250,7 +250,7 @@
     padding: 2rem;
 
     p {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       font-size: 1.5rem;
       font-weight: 600;
       color: $orange-color;
@@ -278,7 +278,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     padding: 0.875rem 1.5rem;
     border-radius: 9999px;
@@ -315,34 +315,11 @@
       }
     }
   }
-
-  &-scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: float 1.5s infinite;
-    z-index: 1;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-
-    @supports (padding: env(safe-area-inset-bottom)) {
-      bottom: calc(2rem + env(safe-area-inset-bottom));
-    }
-  }
-
-  &-scroll-line {
-    width: 0.25rem;
-    height: 4rem;
-    background: linear-gradient(180deg, $red-primary, transparent);
-    border-radius: 9999px;
-  }
 }
 
 @keyframes pulse-scale {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.3;
   }
@@ -353,7 +330,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {

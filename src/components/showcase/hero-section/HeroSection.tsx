@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Ticket, Play } from 'lucide-react'
 import { getTimeUntilEvent, EventStatus } from '@/lib/dayjs'
+import VideoModal from '@/components/showcase/video-modal/VideoModal'
 
 interface TimeLeft {
   days: number
@@ -19,6 +20,7 @@ export default function HeroSection() {
     eventStatus: 'before',
   })
   const [isMounted, setIsMounted] = useState(false)
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
   useEffect(() => {
     // 클라이언트 사이드에서만 실행되도록 마운트 상태 설정
@@ -40,7 +42,7 @@ export default function HeroSection() {
   }
 
   const handleTrailer = () => {
-    alert('트레일러 재생')
+    setIsVideoModalOpen(true)
   }
 
   return (
@@ -132,9 +134,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="hero-section-scroll-indicator">
-        <div className="hero-section-scroll-line"></div>
-      </div>
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoId="N58wsSKf1pk"
+      />
     </section>
   )
 }
