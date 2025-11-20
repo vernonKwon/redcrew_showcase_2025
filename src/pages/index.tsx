@@ -8,6 +8,7 @@ import GuestTeams from '@/components/showcase/guest-teams/GuestTeams'
 import LocationSection from '@/components/showcase/location-section/LocationSection'
 import ContactSection from '@/components/showcase/contact-section/ContactSection'
 import Footer from '@/components/showcase/footer/Footer'
+import LandscapeWarning from '@/components/showcase/landscape-warning/LandscapeWarning'
 
 const HomePage: NextPageWithLayout = () => {
   const siteUrl = 'https://redcrew.link' // 실제 도메인으로 변경 필요
@@ -112,6 +113,7 @@ const HomePage: NextPageWithLayout = () => {
       </Head>
 
       <div className="showcase-page">
+        <LandscapeWarning />
         <Navigation />
         <HeroSection />
         <HistoryTimeline />
